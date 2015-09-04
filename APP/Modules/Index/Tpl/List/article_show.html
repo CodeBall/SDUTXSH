@@ -1,0 +1,48 @@
+<include file="Common:header"/>
+<link rel="stylesheet" href="__PUBLIC__/css/article_show.css" type="text/css"/>
+<include file="Common:nav"/>
+
+<div class="main">
+    <div class="show_back">
+        <div class="show_top">
+        </div>
+        <div class="show_head">
+            <h1>{$article.title}</h1>
+            <p>发表时间：{$article.time|date='y-m-d H:i',###}&nbsp;&nbsp;&nbsp;&nbsp;作者：{$article.auther}</p>
+        </div>
+        <div class="show_body">
+            {$article.content}
+            <if condition="$article['cid'] eq 13">
+                <div class="sign"><a href="{:U('Index/List/sign',array('id'=>$article['id'],'time' =>$article['time']))}">我要报名</a> </div>
+                <table class="table">
+                    <tr>
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>学校</th>
+                        <th>学院</th>
+                        <th>班级</th>
+                        <th>报名时间</th>
+                        <th>联系方式</th>
+                        <th>状态</th>
+                    </tr>
+                    <foreach name = 'stu' item = 'v'>
+                        <tr>
+                            <td width="8%">{$v.sign_name}</td>
+                            <td width="10">{$v.sign_num}</td>
+                            <td width="13%">{$v.sign_school}</td>
+                            <td width="20%">{$v.sign_college}</td>
+                            <td width="10%">{$v.sign_class}</td>
+                            <td width="13%">{$v.sign_time|date='y-m-d H:i',###}</td>
+                            <td width="10%">{$v.sign_tel}</td>
+                            <td width="16%">{$v.sign_status}</td>
+                        </tr>
+                    </foreach>
+                    <tr>
+                        <td colspan="8">{$page}</td>
+                    </tr>
+                </table>
+            </if>
+        </div>
+    </div>
+    <include file="Common:bottom"/>
+</div>

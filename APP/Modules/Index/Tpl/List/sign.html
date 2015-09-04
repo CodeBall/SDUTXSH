@@ -1,0 +1,56 @@
+<include file="Common:header"/>
+<link rel="stylesheet" href="__PUBLIC__/css/article_show.css" type="text/css"/>
+<include file="Common:nav"/>
+
+<div class="main">
+    <div class="sign_handle">
+        <form method="post" action="{:U('Index/List/signHandle')}">
+            <h1>活动在线报名</h1>
+            <table class="table" border="0">
+                <tr>
+                    <td width="40%" align="right">姓名：</td>
+                    <td>
+                        <input type="text" name="sign_name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">学号：</td>
+                    <td>
+                        <input type="text" name="sign_num" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">学校：</td>
+                    <td>
+                        <input type="text" name="sign_school" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">学院：</td>
+                    <td>
+                        <input type="text" name="sign_college" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">班级：</td>
+                    <td>
+                        <input type="text" name="sign_class" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">联系方式：</td>
+                    <td>
+                        <input type="text" name="sign_tel" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2">
+                        <input type="hidden" name="sign_cid" value="{$id}"/>
+                        <input type="submit" value="保存添加" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <include file="Common:bottom"/>
+</div>

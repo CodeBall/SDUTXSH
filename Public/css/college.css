@@ -1,0 +1,125 @@
+.college_xueyuan{
+    width: 930px;
+    min-height: 500px;
+}
+.college_left{
+    width: 200px;
+    height: 260px;
+    margin-top: 20px;
+    border: 1px solid #e3e3e3;
+    float: left;
+}
+.biaotou{
+    width: 200px;
+    height: 50px;
+    background-color: #00AAFF;
+}
+.biaotou span{
+    color: #ffffff;
+    font-size: xx-large;
+    margin-left: 40px;
+}
+.biao{
+    width: 200px;
+    height: 70px;
+    padding-top: 16px;
+    border: 1px solid #e3e3e3;
+}
+
+.biao:hover {
+    background-color: #00b7ee;
+}
+.biao a{
+    font-size: 18px;
+    display: block;
+    width: 200px;
+    height: 70px;
+    margin-left: 20px;
+    color: #000000;
+    text-decoration: none;
+}
+
+
+.college_right{
+    width: 680px;
+    min-height: 500px;
+    margin-right: 65px;
+
+}
+.college_right ul{
+    list-style-type: none;
+}
+.college_right ul li{
+    width: 300px;
+    margin-top: 10px;
+    padding-top: 7px;
+    margin-left: 20px;
+    padding-left: 50px;
+    height: 50px;
+    background-color: #E7ECF0;
+    float: left;
+}
+.college_right ul li a{
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+}
+.college_right ul li a:hover{
+    color: #0000ff;
+}
+
+
+
+
+
+
+
+
+
+/*
+.college_zhong{
+    width: 20px;
+    height: 500px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #66512c;
+}
+.college_right{
+    width: 450px;
+    height: 500px;
+    float: left;
+}
+.college_left ul{
+    list-style-type: none;
+}
+.college_left ul li{
+    clear: both;
+    font-size: large;
+    margin-right: 35px;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.college_left ul li a{
+    text-decoration: none;
+}
+.college_left ul li a:hover{
+    color: #ff0000;
+}
+.college_right ul{
+    list-style-type: none;
+}
+.college_right ul li{
+    clear: both;
+    font-size: large;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.college_right ul li a{
+    text-decoration: none;
+}
+.college_right ul li a:hover{
+    color: #ff0000;
+}

@@ -1,0 +1,86 @@
+#body{
+    width: 100%;
+    margin: 0 0;
+}
+#top{
+    width: 100%;
+    height: 50px;
+    background-color: deepskyblue;
+}
+#huihui{
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 3px;
+    float: left;
+}
+#school{
+    padding-top: 13px;
+    float: left;
+}
+#school a{
+    text-decoration: none;
+    font-size: larger;
+    color: #000000;
+}
+#school a:hover{
+    font-size: x-large;
+}
+#dengchu{
+    padding-top: 13px;
+    float: right;
+    padding-right: 30px;
+}
+#dengchu a{
+    text-decoration: none;
+    font-size: larger;
+    color: #000000;
+}
+#dengchu a:hover{
+    font-size: x-large;
+}
+#bottom{
+    width: 100%;
+    height: auto;
+}
+#bottom_left{
+    width: 15%;
+    height: 800px;
+    float: left;
+    background-color: deepskyblue;
+}
+
+#bottom_left a{
+    text-decoration: none;
+    color: white;
+}
+#bottom_left dl{
+    border-bottom: solid 1px #dcdcdc;
+    padding-bottom: 15px;
+}
+#bottom_left dl dt{
+    color:white;
+    border-left: 8px solid white;
+    padding-left: 10px;
+    margin-top: 10px;
+    font-size: larger;
+}
+#bottom_left dl dd{
+    margin-top: 15px;
+    padding-left: 20px;
+}
+#bottom_left dl dd a:hover{
+    font-size: xx-large;
+    background-color: dodgerblue;
+}
+#bottom_right{
+    width: 85%;
+    height: 800px;
+    float: left;
+    background-color: #ECFFEC;
+}
+iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}

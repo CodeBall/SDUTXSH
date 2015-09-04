@@ -1,0 +1,151 @@
+.news-content {
+    width: 960px;
+    padding-top: 25px;
+    height: 600px;
+}
+
+.news-content-left {
+    width: 200px;
+    height: 190px;
+    margin-top: 20px;
+    border: 1px solid #e3e3e3;
+    float: left;
+    /*width: 200px;
+    height: 500px;
+    float: left;*/
+}
+.biaotou{
+    width: 200px;
+    height: 50px;
+    background-color: #00AAFF;
+}
+.biaotou span{
+    color: #ffffff;
+    font-size: xx-large;
+    margin-left: 40px;
+}
+.biao{
+    width: 200px;
+    height: 70px;
+    padding-top: 16px;
+    border: 1px solid #e3e3e3;
+}
+.biao:hover {
+    background-color: #00b7ee;
+}
+.biao a{
+    font-size: 18px;
+    display: block;
+    width: 200px;
+    height: 70px;
+    margin-left: 20px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.news-content-right {
+    width: 680px;
+    height: auto;
+    float: left;
+    margin-left: 10px;
+}
+
+.wenben{
+    width: 680px;
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 9px;
+    -webkit-box-shadow:  0 0 10px #717171;
+    -moz-box-shadow:  0 0 10px #717171;
+    box-shadow:  0 0 10px #717171;
+}
+.wenben p{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.wenben p span {
+    display: block;
+    border-bottom: 1px dashed #717171;
+}
+h2{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+h4{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.zhongxin{
+    width: 100%;
+    height: auto;
+    clear: both;
+}
+.zhongxin_top{
+    width: 100%;
+    height:auto;
+}
+.zhongxin_left{
+    width: 40%;
+    height: auto;
+    float: left;
+}
+.zhongxin_right{
+    float: left;
+    width: 50%;
+    height: auto;
+}
+.zhongxin_right img{
+    width: 300px;
+    height: 200px;
+}
+/*
+#c1, #c2 {
+    width: 550px;
+    height: 500px;
+}
+
+.cxt1 {
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+.c1 , .c2{
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin-top: 40px;
+    text-align: center;
+    background-color: #0694D4;
+    color: #ffffff;
+}
+
+.c1 h3, .c2 h3  {
+    padding-top: 10px;
+}
+
+.c1:hover, .c2:hover{
+    background-color: #717171;
+}
+
+.cxt1 a {
+    text-decoration: none;
+}
+
+.cxt1 a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+

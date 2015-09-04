@@ -1,0 +1,65 @@
+</head>
+<body>
+<script>
+    $(function(){
+        $(".dropdown").hover(
+                function(){
+                    $(this).find('ul').fadeIn(100);
+                },
+                function(){
+                    $(this).find('ul').fadeOut(100);
+                }
+        );
+    });
+</script>
+<div class="header">
+    <div class="top"></div>
+    <div class="top-content">
+        <a href="#">设为首页</a> |<a href="#">收藏本站</a>
+    </div>
+</div>
+
+<div class="public">
+    <div class="logo">
+        <div class="logo-left">
+            <img src="__PUBLIC__/img/logo.png" alt=""/>
+        </div>
+        <div class="logo-right">
+            <div class="search">
+                <form action="">
+                    <div class="search-in">
+                        <input type="text" class="form-control" placeholder="请输入您要搜索的关键字"/>
+                        <a href=""><span class="glyphicon glyphicon-search"></span></a>
+                    </div>
+                </form>
+            </div>
+            <div class="focus">
+                <a href="#"><img class="weibo" src="__PUBLIC__/img/weibo.jpg" alt=""/></a>
+                <a href="#"><img class="renren" src="__PUBLIC__/img/renren.jpg" alt=""/></a>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <php>
+            $map['id']  = array('lt',14);
+            $cate = M('cate')->order('sort')->where($map)->select();
+            import('Class.Category',APP_PATH);
+            $cate = Category::unlimitedForLayer($cate);
+        </php>
+        <ul class="nav-list">
+            <li class="nav-item border"><a href="{:U('Index/Index/index')}"><span>首页</span><br/><b>Home</b></a></li>
+            <foreach name="cate" item="v">
+                <li class="nav-item border dropdown">
+                    <a href="{:U('/c_'.$v['id'])}"><span>{$v.name}</span><br/><b>{$v.nikename}</b></a>
+                    <if condition='$v["child"]'>
+                        <ul style="display: none" class="nav-submenu">
+                            <foreach name="v.child" item="value">
+                                <li class="nav-submenu-item"><a href="{:U('/c_'.$value['id'])}" target="_blank">{$value.name}</a></li>
+                            </foreach>
+                        </ul>
+                    </if>
+                </li>
+            </foreach>
+        </ul>
+    </nav>
+</div>

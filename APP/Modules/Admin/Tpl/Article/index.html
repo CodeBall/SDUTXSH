@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/public_style.css" />
+    <title></title>
+</head>
+<body>
+<h1>文章列表</h1>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>标题</th>
+        <th>作者</th>
+        <th>所属分类</th>
+        <th>发布时间</th>
+        <th>操作</th>
+    </tr>
+    <foreach name = 'article' item = 'v'>
+        <tr>
+            <td width="8%">{$v.id}</td>
+            <td>
+                {$v.title}
+                <foreach name="v.attr" item="value">
+                    <strong style="color:{$value.color}">【{$value.name}】</strong>
+                </foreach>
+            </td>
+            <td width="20%">{$v.auther}</td>
+            <td width="10%">{$v.cate_name}</td>
+            <td width="13%">{$v.time|date='y-m-d H:i',###}</td>
+            <td width="17%">
+                【<a href="{:U('Admin/Article/toTrach',array('id'=>$v['id']))}">删除</a>】
+                【<a href="{:U('Admin/Article/changeArticle',array('id'=>$v['id']))}">编辑</a>】
+                <if condition="$v['time']">
+                    <if condition="$v['cate_name'] eq '在线报名'">
+                        【<a href="{:U('Admin/Article/over',array('id'=>$v['id']))}">结束</a>】
+                        【<a href="{:U('Admin/Article/show_stu',array('id'=>$v['id']))}">查看</a>】
+                    </if>
+                </if>
+            </td>
+        </tr>
+    </foreach>
+    <tr>
+        <td colspan="6">{$page}</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<include file="Common:header"/>
+<link rel="stylesheet" href="__PUBLIC__/css/college.css" type="text/css"/>
+<link rel="stylesheet" href="__PUBLIC__/css/news.css" type="text/css"/>
+<include file="Common:nav"/>
+
+<div class="main">
+    <div class="news_buju">
+        <dl class="list_dl">
+            <dt><b>{$biaoti.name}</b></dt>
+            <dd>
+                <ul>
+                    <foreach name="article" item="v">
+                        <li>
+                            <span>{$v.time|date='y-m-d H:i',###}</span>
+                             <a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a>
+                        </li>
+                    </foreach>
+                    <li>{$page}</li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+    <include file="Common:bottom"/>
+</div>

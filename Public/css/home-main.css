@@ -1,0 +1,34 @@
+/*Carousel*/
+.lunbo{width: 100%;height: 550px;background-color:#0694D4;padding-top: 230px;}
+.carousel{width:960px;height:320px;background-color:#0694D4;margin:0 auto;}
+.carousel .item{width:960px;height:300px;background-color:#0694D4;margin: 0 auto;}
+.carousel img{width:960px;}
+/*main*/
+.main{width:100%;height: auto;background-color:#F2F2F2;}
+.cont{width:960px;height:1000px;background-color:#F2F2F2;margin: 0 auto;}
+.cont-top-1{width:300px;height:400px;background-color:white;float:left;border: 1px solid grey;border-radius:10px;margin: 10px 10px;}
+.cont-top-1 img{margin-top: 10px;}
+.cont-top-1 ul{margin-top: 20px;list-style: none;counter-reset:count;margin-left: -20px;}
+.cont-top-1 ul li{margin-top: 15px;}
+.cont-top-1 ul li a:hover,.cont-top-2 a:hover,.cont-top-2 span:hover,.cont-middle-1 a:hover,.cont-middle-1 span:hover{color:#767676;}
+.cont-top-1 ul li:before{content:" ● "; color:red;}
+.cont-top-2{float:left;width:620px;height: 400px;background-color:#F2F2F2;margin:10px;}
+.cont-top-a{width: 620px;height:220px;}
+.cont-top-a-title{width:620px;height:30px;margin-top: -10px;}
+.cont-top-a table{margin-top: 10px;border-bottom:1px dashed #CACACA;}
+.more{font-weight: 100;font-size: small;margin-top: 10px;}
+hr{margin-top:8px;}
+.cont-top-b{width:300px;height:160px;float:left;}
+.cont-top-b ul li{list-style: none;margin-left: -40px;margin-top: 10px;}
+/*cont-middle*/
+.cont-middle-1{width:300px;height:300px;float:left;margin-left: 14px;}
+.cont-middle-title{margin-top: 30px;}
+.cont-middle-1 table th h4{text-align: center;color:black;font-size:19px;margin-top:20px;}
+.cont-middle-1 ul li{list-style:none;margin-left:-40px;margin-top: 10px;}
+.cont-middle-3{width:300px;height:300px;background-color:#F2F2F2;float:left;margin-left: 14px;}
+.cont-middle-3 img{margin-top: 60px;}
+/*cont-bottom*/
+.cont-bottom{width:940px;height:200px;background-color:white;border-radius:10px;float: left;margin: 20px 10px;}
+.cont-bottom-title{width: 100px;height: 40px;background-color: #328FF6;border-radius:5px;margin: -10px auto;text-align:center;font-size: x-large;color: white;}
+.cont-bottom-title a{color: white;}
+.cont-bottom-cont{width: 200px;height: 180px;float: left;margin-top:30px;margin-left: 32px;}

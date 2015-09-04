@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="__PUBLIC__/public_style.css"/>
+    <title></title>
+</head>
+<body>
+<h1>用户列表</h1>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>用户名称</th>
+        <th>真实姓名</th>
+        <th>联系方式</th>
+        <th>登录ip</th>
+        <th>所属组别</th>
+        <th>操作</th>
+    </tr>
+    <foreach name="user" item="v">
+        <tr>
+            <td>{$v.user_id}</td>
+            <td>{$v.user_name}</td>
+            <td>{$v.user_nikename}</td>
+            <td>{$v.user_tel}</td>
+            <td>{$v.login_ip}</td>
+            <td>
+                <if condition='$v["user_name"] eq C("RBAC_SUPERADMIN")'>
+                    超级管理员
+                <else />
+                    <ul>
+                        <foreach name="v.role" item="value">
+                            <li>{$value.name}({$value.remark})</li>
+                        </foreach>
+                    </ul>
+                </if>
+            </td>
+            <td><a href="{:U('Admin/Rbac/deleteUser',array('uid'=>$v['user_id']))}">删除</a> </td>
+        </tr>
+    </foreach>
+</table>
+</body>
+</html>

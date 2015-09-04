@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/public_style.css" />
+    <title></title>
+</head>
+<body>
+<h1>活动报名人员信息</h1>
+<table class="table">
+    <tr>
+        <th>姓名</th>
+        <th>学号</th>
+        <th>学校</th>
+        <th>学院</th>
+        <th>班级</th>
+        <th>报名时间</th>
+        <th>联系方式</th>
+        <th>状态</th>
+    </tr>
+    <foreach name = 'stu' item = 'v'>
+        <tr>
+            <td width="8%">{$v.sign_name}</td>
+            <td width="10">{$v.sign_num}</td>
+            <td width="13%">{$v.sign_school}</td>
+            <td width="20%">{$v.sign_college}</td>
+            <td width="10%">{$v.sign_class}</td>
+            <td width="13%">{$v.sign_time|date='y-m-d H:i',###}</td>
+            <td width="10%">{$v.sign_tel}</td>
+            <td width="16%">
+                <if condition="$v['sign_status'] eq '接受'">
+                    改为【<a href="{:U('Admin/Article/change_sta',array('id'=>$v['sign_id'],'status'=>'不接受'))}">不接受</a>】
+                    <else />
+                        改为【<a href="{:U('Admin/Article/change_sta',array('id'=>$v['sign_id'],'status'=>'接受'))}">接受</a>】
+                </if>
+            </td>
+        </tr>
+    </foreach>
+    <tr>
+        <td colspan="8">{$page}</td>
+    </tr>
+</table>
+</body>
+</html>
