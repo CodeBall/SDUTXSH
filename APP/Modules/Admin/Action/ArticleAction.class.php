@@ -78,6 +78,7 @@ Class ArticleAction extends CommonAction{
             'time'=>time(),
             'auther'=> $_POST['auther'],
             'cid'=>(int) $_POST['cid']
+//            'del' => 0
         );
         if($bid = M('Article')->add($data)){
             if(isset($_POST['aid'])){

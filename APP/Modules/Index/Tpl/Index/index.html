@@ -38,7 +38,7 @@
             <ul>
                 <!--通知公告-->
                 <volist name="gonggao" id="v" offset='0' length="9">
-                         <li><a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span style="float: right;padding-right: 10px">{$v.time|date='y-m-d',###}</span></li>
+                         <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span style="float: right;padding-right: 10px">{$v.time|date='y-m-d',###}</span></li>
                 </volist>
             </ul>
         </div>
@@ -49,29 +49,19 @@
                     <a href="{:U('Index/List/index',array('id' => 8))}"><h3>校会动态 / <small>News</small></h3></a>
                 </div>
             </div>
-            <div class="content-top-right-center">
-                <div class="content-top-right-img">
-                    <img src="__PUBLIC__/img/dongtai-1.jpg" alt=""/>
-                </div>
-                <div class="content-top-right-center-right">
-                    <h4><a href="#">原本青春，帅亦何妨--记APACPH</a></h4>
-                    <p>正青春的微笑，温尔的侧脸，或许，这就是徐行在花季里最美的自己。</p>
-                    <a href="#">[全文]</a>
-                </div>
-            </div>
             <div class="content-top-right-bot">
                 <div class="content-top-right-bot1 pull-left">
                     <ul>
-                        <volist name="dongtai" id="v" offset='0' length="5">
-                            <li><a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}<span class="pull-right">{$v.time|date='y-m-d',###}</span></a></li>
+                        <volist name="dongtai" id="v" offset='0' length="10">
+                            <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></li>
                         </volist>
 
                     </ul>
                 </div>
                 <div class="content-top-right-bot2 pull-right">
                     <ul>
-                        <volist name="dongtai" id="v" offset='6' length="10">
-                            <li><a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}<span class="pull-right">{$v.time|date='y-m-d',###}</span></a></li>
+                        <volist name="dongtai" id="v" offset='11' length="20">
+                            <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></li>
                         </volist>
                     </ul>
                 </div>
@@ -86,7 +76,7 @@
                 <div style="width: 300px;height: 260px;clear: both;padding-top: 5px">
                     <ul>
                         <volist name="college_style" id="v" offset='0' length="7">
-                            <li style="padding: 5px;list-style: none;margin-left: -30px"><a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}<span class="pull-right">{$v.time|date='y-m-d',###}</span></a></li>
+                            <li style="padding: 5px;list-style: none;margin-left: -30px"><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}<span class="pull-right">{$v.time|date='y-m-d',###}</span></a></li>
                         </volist>
                     </ul>
                     </tbody>
@@ -100,7 +90,7 @@
                 </div>
                 <ul><!--li<=7-->
                     <volist name="culture" id="v" offset='0' length="7">
-                        <li><a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></li>
+                        <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></li>
                     </volist>
                 </ul>
             </div>
@@ -167,5 +157,17 @@
         colee_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
 
     </script>
+
+<script>
+    $(document).ready(function () {
+        $(".title").each(function() {
+            var maxlength = 15;
+            if($(this).text().length>maxlength) {
+                $(this).text($(this).text().substring(0, maxlength));
+                $(this).html($(this).html()+"...");
+            }
+        });
+    });
+</script>
 </body>
 </html>

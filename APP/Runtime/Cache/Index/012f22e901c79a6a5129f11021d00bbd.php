@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="__PUBLIC__/css/yangshi.css" type="text/css"/>
 <link rel="stylesheet" href="__PUBLIC__/css/college.css" type="text/css"/>
 <link rel="stylesheet" href="__PUBLIC__/css/news.css" type="text/css"/>
+<script>
+    $(document).ready(function () {
+        $("#title").each(function() {
+            var maxlength = 8;
+            if($(this).text().length>maxlength) {
+                $(this).text($(this).text().substring(0, maxlength));
+                $(this).html($(this).html()+"...");
+            }
+        });
+    });
+</script>
 </head>
 <body>
 <script>
@@ -73,7 +84,7 @@
                 <ul>
                     <?php if(is_array($article)): foreach($article as $key=>$v): ?><li>
                             <span><?php echo (date('y-m-d H:i',$v["time"])); ?></span>
-                             <a href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a>
+                             <a id="title" href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a>
                         </li><?php endforeach; endif; ?>
                     <li><?php echo ($page); ?></li>
                 </ul>
@@ -96,4 +107,3 @@
     </div>
 </div>
 <div class="copyright"> Copyright © 2015 山东理工大学学生会 All Rights Reserved </div>
-</div>

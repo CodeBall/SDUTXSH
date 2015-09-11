@@ -99,7 +99,7 @@
             <a href="<?php echo U('Index/List/index',array('id' => 10));?>"><img src="__PUBLIC__/img/gonggao.png" alt=""/></a>
             <ul>
                 <!--通知公告-->
-                <?php if(is_array($gonggao)): $i = 0; $__LIST__ = array_slice($gonggao,0,9,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a><span style="float: right;padding-right: 10px"><?php echo (date('y-m-d',$v["time"])); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php if(is_array($gonggao)): $i = 0; $__LIST__ = array_slice($gonggao,0,9,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a class="title" href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a><span style="float: right;padding-right: 10px"><?php echo (date('y-m-d',$v["time"])); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
             </ul>
         </div>
         <div class="content-top-right">
@@ -109,26 +109,16 @@
                     <a href="<?php echo U('Index/List/index',array('id' => 8));?>"><h3>校会动态 / <small>News</small></h3></a>
                 </div>
             </div>
-            <div class="content-top-right-center">
-                <div class="content-top-right-img">
-                    <img src="__PUBLIC__/img/dongtai-1.jpg" alt=""/>
-                </div>
-                <div class="content-top-right-center-right">
-                    <h4><a href="#">原本青春，帅亦何妨--记APACPH</a></h4>
-                    <p>正青春的微笑，温尔的侧脸，或许，这就是徐行在花季里最美的自己。</p>
-                    <a href="#">[全文]</a>
-                </div>
-            </div>
             <div class="content-top-right-bot">
                 <div class="content-top-right-bot1 pull-left">
                     <ul>
-                        <?php if(is_array($dongtai)): $i = 0; $__LIST__ = array_slice($dongtai,0,5,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <?php if(is_array($dongtai)): $i = 0; $__LIST__ = array_slice($dongtai,0,10,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a class="title" href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
 
                     </ul>
                 </div>
                 <div class="content-top-right-bot2 pull-right">
                     <ul>
-                        <?php if(is_array($dongtai)): $i = 0; $__LIST__ = array_slice($dongtai,6,10,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <?php if(is_array($dongtai)): $i = 0; $__LIST__ = array_slice($dongtai,11,20,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a class="title" href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
                 </div>
             </div>
@@ -141,7 +131,7 @@
                 </div>
                 <div style="width: 300px;height: 260px;clear: both;padding-top: 5px">
                     <ul>
-                        <?php if(is_array($college_style)): $i = 0; $__LIST__ = array_slice($college_style,0,7,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li style="padding: 5px;list-style: none;margin-left: -30px"><a href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <?php if(is_array($college_style)): $i = 0; $__LIST__ = array_slice($college_style,0,7,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li style="padding: 5px;list-style: none;margin-left: -30px"><a class="title" href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
                     </tbody>
                 </div>
@@ -153,7 +143,7 @@
                     </div>
                 </div>
                 <ul><!--li<=7-->
-                    <?php if(is_array($culture)): $i = 0; $__LIST__ = array_slice($culture,0,7,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                    <?php if(is_array($culture)): $i = 0; $__LIST__ = array_slice($culture,0,7,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a class="title" href="<?php echo U('Index/List/article_show',array('id'=>$v['id']));?>"><?php echo ($v["title"]); ?></a><span class="pull-right"><?php echo (date('y-m-d',$v["time"])); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
                 </ul>
             </div>
             <div class="content-cen3">
@@ -234,5 +224,17 @@
         colee_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
 
     </script>
+
+<script>
+    $(document).ready(function () {
+        $(".title").each(function() {
+            var maxlength = 15;
+            if($(this).text().length>maxlength) {
+                $(this).text($(this).text().substring(0, maxlength));
+                $(this).html($(this).html()+"...");
+            }
+        });
+    });
+</script>
 </body>
 </html>
