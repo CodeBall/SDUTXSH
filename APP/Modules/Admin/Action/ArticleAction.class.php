@@ -77,8 +77,8 @@ Class ArticleAction extends CommonAction{
             'content'=>$_POST['content'],
             'time'=>time(),
             'auther'=> $_POST['auther'],
-            'cid'=>(int) $_POST['cid']
-//            'del' => 0
+            'cid'=>(int) $_POST['cid'],
+            'del' => 1//该属性为1代表文章已经被删除，属行为0代表文章已经发表
         );
         if($bid = M('Article')->add($data)){
             if(isset($_POST['aid'])){
@@ -89,7 +89,7 @@ Class ArticleAction extends CommonAction{
                 $sql = rtrim($sql,',');
                 M('article_attr')->query($sql);
             }
-            $this->success('添加文章成功',U('Admin/Article/index'));
+            $this->success('添加文章成功');
         }
         else
             $this->error('添加文章失败');

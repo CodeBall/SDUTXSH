@@ -10,17 +10,7 @@
     <link rel="stylesheet" href="__PUBLIC__/css/yangshi.css" type="text/css"/>
 <link rel="stylesheet" href="__PUBLIC__/css/college.css" type="text/css"/>
 <link rel="stylesheet" href="__PUBLIC__/css/news.css" type="text/css"/>
-<script>
-    $(document).ready(function () {
-        $("#title").each(function() {
-            var maxlength = 8;
-            if($(this).text().length>maxlength) {
-                $(this).text($(this).text().substring(0, maxlength));
-                $(this).html($(this).html()+"...");
-            }
-        });
-    });
-</script>
+
 </head>
 <body>
 <script>
@@ -38,7 +28,7 @@
 <div class="header">
     <div class="top"></div>
     <div class="top-content">
-        <a href="#">设为首页</a> |<a href="#">收藏本站</a>
+        <a href="#">设为首页</a> |<a href="<?php echo U('Admin/Login/index');?>">在线投稿</a>
     </div>
 </div>
 

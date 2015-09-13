@@ -27,7 +27,7 @@
 <div class="header">
     <div class="top"></div>
     <div class="top-content">
-        <a href="#">设为首页</a> |<a href="#">收藏本站</a>
+        <a href="#">设为首页</a> |<a href="<?php echo U('Admin/Login/index');?>">在线投稿</a>
     </div>
 </div>
 

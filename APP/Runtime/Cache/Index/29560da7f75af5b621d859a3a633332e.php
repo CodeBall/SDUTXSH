@@ -27,7 +27,7 @@
 <div class="header">
     <div class="top"></div>
     <div class="top-content">
-        <a href="#">设为首页</a> |<a href="#">收藏本站</a>
+        <a href="#">设为首页</a> |<a href="<?php echo U('Admin/Login/index');?>">在线投稿</a>
     </div>
 </div>
 
@@ -52,7 +52,7 @@
         </div>
     </div>
     <nav>
-        <?php $map['id'] = array('lt',13); $cate = M('cate')->order('sort')->where($map)->select(); import('Class.Category',APP_PATH); $cate = Category::unlimitedForLayer($cate); ?>
+        <?php $map['id'] = array('lt',14); $cate = M('cate')->order('sort')->where($map)->select(); import('Class.Category',APP_PATH); $cate = Category::unlimitedForLayer($cate); ?>
         <ul class="nav-list">
             <li class="nav-item border"><a href="<?php echo U('Index/Index/index');?>"><span>首页</span><br/><b>Home</b></a></li>
             <?php if(is_array($cate)): foreach($cate as $key=>$v): ?><li class="nav-item border dropdown">
