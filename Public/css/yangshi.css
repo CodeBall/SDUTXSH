@@ -372,7 +372,7 @@ nav {
 
 .content-bot {
     width: 960px;
-    height: 200px;
+    height: 250px;
     margin-top: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -403,12 +403,17 @@ nav {
 #colee_left{
     overflow: hidden;
     width: 900px;
-    z-index: 9;
+    height: 170px;
 }
 
 #colee_left img {
-    margin-left: 50px;
+    margin-left: 10px;
 }
+#colee_left ul{
+    list-style:none;
+}
+#colee_left li { float:left; padding-right:9px;}
+#colee_left img { border:1px solid #ddd; background:#fff; padding:2px;}
 
 .footer {
     padding-top: 15px;

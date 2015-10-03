@@ -103,36 +103,15 @@
                 <a href="#">青春印象</a>
             </div>
             <div id="colee_left">
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tbody>
-                        <tr>
-                            <td id="colee_left1" valign="top" align="center">
-                                <table cellspacing="0" cellpadding="2" border="0">
-                                    <tbody>
-                                        <tr align="center">
-                                            <td><p><a href=""><img src="__PUBLIC__/img/1.jpg" alt=""/></a></p></td>
-                                            <td><p><a href=""><img src="__PUBLIC__/img/2.jpg" alt=""/></a></p></td>
-                                            <td><p><a href=""><img src="__PUBLIC__/img/3.jpg" alt=""/></a></p></td>
-                                            <td><p><a href=""><img src="__PUBLIC__/img/4.jpg" alt=""/></a></p></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td id="colee_left2" valign="top" align="center">
-                                <table cellspacing="0" cellpadding="2" border="0">
-                                    <tbody>
-                                        <tr align="center">
-                                            <td><p><a href=""><img src="__PUBLIC__/img/1.jpg" alt=""/></a></p></td>
-                                            <td><p><a href=""><img src="__PUBLIC__/img/2.jpg" alt=""/></a></p></td>
-                                            <td><p><a href=""><img src="__PUBLIC__/img/3.jpg" alt=""/></a></p></td>
-                                            <td><p><a href=""><img src="__PUBLIC__/img/4.jpg" alt=""/></a></p></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <ul id="scroll">
+                    <li><a href=""><img style="width: 240px;height: 180px;" src="__PUBLIC__/img/1.jpg" alt=""/></a></li>
+                    <li><a href=""><img style="width: 240px;height: 180px;" src="__PUBLIC__/img/2.jpg" alt=""/></a></li>
+                    <li><a href=""><img style="width: 240px;height: 180px;" src="__PUBLIC__/img/3.jpg" alt=""/></a></li>
+                    <li><a href=""><img style="width: 240px;height: 180px;" src="__PUBLIC__/img/4.jpg" alt=""/></a></li>
+                    <li><a href=""><img style="width: 240px;height: 180px;" src="__PUBLIC__/img/5.jpg" alt=""/></a></li>
+                    <li><a href=""><img style="width: 240px;height: 180px;" src="__PUBLIC__/img/6.jpg" alt=""/></a></li>
+                    <li><a href=""><img style="width: 240px;height: 180px;" src="__PUBLIC__/img/7.jpg" alt=""/></a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -168,6 +147,32 @@
             }
         });
     });
+</script>
+<script>
+    var id = function(el) {          return document.getElementById(el);        },
+            c = id('colee_left');
+    if(c) {
+        var ul = id('scroll'),
+                lis = ul.getElementsByTagName('li'),
+                itemCount = lis.length,
+                width = lis[0].offsetWidth, //获得每个img容器的宽度
+                marquee = function() {
+                    c.scrollLeft += 2;
+                    if(c.scrollLeft % width <= 1){  //当 c.scrollLeft 和 width 相等时，把第一个img追加到最后面
+                        ul.appendChild(ul.getElementsByTagName('li')[0]);
+                        c.scrollLeft = 0;
+                    };
+                },
+                speed = 50; //数值越大越慢
+        ul.style.width = width*itemCount + 'px'; //加载完后设置容器长度
+        var timer = setInterval(marquee, speed);
+        c.onmouseover = function() {
+            clearInterval(timer);
+        };
+        c.onmouseout = function() {
+            timer = setInterval(marquee, speed);
+        };
+    };
 </script>
 </body>
 </html>
