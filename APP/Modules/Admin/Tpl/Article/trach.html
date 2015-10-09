@@ -20,7 +20,7 @@
         <tr>
             <td width="8%">{$v.id}</td>
             <td>
-                {$v.title}
+                <a href="{:U('Admin/Article/changeArticle',array('id'=>$v['id']))}">{$v.title}</a>
                 <foreach name="v.attr" item="value">
                     <strong style="color:{$value.color}">【{$value.name}】</strong>
                 </foreach>

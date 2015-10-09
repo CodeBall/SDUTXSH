@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="__PUBLIC__/public_style.css"/>
+    <script type="text/javascript" src="__PUBLIC__/jquery-1.7.2.min.js"></script>
+    <title></title>
+</head>
+<body>
+<form method="post" action="{:U('Admin/Rbac/ChangePasHandle')}">
+    <h1>修改用户基本信息</h1>
+    <h4 style="text-align: center;background-color: yellow">注意：修改基本信息时一定要修改密码</h4><hr/>
+    <table class="table">
+        <tr>
+            <td align="right">用户名：</td>
+            <td><input type="text" name="user_name" value="{$user['user_name']}"/></td>
+        </tr>
+        <tr>
+        <td align="right">密码：</td>
+        <td><input type="password" name="user_password" value="{$user['user_password']}"/></td>
+        </tr>
+        <tr>
+            <td align="right">真实姓名：</td>
+            <td><input type="text" name="user_nikename" value="{$user['user_nikename']}"/></td>
+        </tr>
+        <tr>
+            <td align="right">联系方式：</td>
+            <td><input type="text" name="user_tel" value="{$user['user_tel']}"/></td>
+        </tr>
+        <tr id="last">
+            <td colspan="2" align="center">
+                <input type="hidden" name="user_id" value="{$user['user_id']}"/>
+                <input type="submit" value="保存修改"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -8,7 +8,7 @@
 Class RbacAction extends CommonAction{
     //用户列表
     public function index(){
-        $field = array('user_id','user_name','user_nikename','user_tel','login_ip');
+        $field = array('user_id','user_name','user_nikename','user_tel','login_ip','user_status');
         $this->user = D('UserRelation')->field($field)->relation(true)->select();
 
         $this->display();
@@ -26,6 +26,7 @@ Class RbacAction extends CommonAction{
             'user_password'=>I('user_password','','md5'),
             'user_nikename'=>$_POST['user_nikename'],
             'user_tel'=>$_POST['user_tel'],
+            'user_status'=>$_POST['user_status'],
             'login_ip'=>get_client_ip()
         );
         //提取用户所需角色信息
@@ -43,6 +44,64 @@ Class RbacAction extends CommonAction{
         else
             $this->error('添加用户失败');
     }
+    //更改用户状态
+    public function changestatus(){
+        $update = array(
+            'user_id'=> (int) $_GET['uid'],
+            'user_status'=>(int) $_GET['user_status'],
+        );
+        if(M('user')->save($update))
+            $this->success('已经成功更改该用户的状态',U('Admin/Rbac/index'));
+        else
+            $this->error('更改失败');
+
+    }
+    //修改用户权限
+    public function ChangeUser(){
+        $uid = (int)$_GET['uid'];
+        $field = array('user_id','user_name','user_nikename','user_tel');
+        $this->user = M('user')->where(array('user_id'=>$uid))->field($field)->find();
+        $this->role = M('role')->select();
+        $this->display();
+    }
+    public function ChangeUserHandle(){
+        $id = $_POST['user_id'];
+        M('role_user')->where(array('user_id'=>$id))->delete();
+        $role = array();
+        if(M('user')->where(array('user_id'=>$id))->find()){
+            foreach($_POST['role_id'] as $v){
+                $role[] = array(
+                    'role_id' => $v,
+                    'user_id' => $id
+                );
+            }
+            M('role_user')->addAll($role);
+            $this->success('修改用户角色成功',U('Admin/Rbac/index'));
+        }
+        else
+            $this->error('修改失败');
+    }
+    //修改基本信息
+    public function ChangePas(){
+        $uid = (int)$_GET['uid'];
+        $field = array('user_id','user_name','user_password','user_nikename','user_tel');
+        $this->user = M('user')->where(array('user_id'=>$uid))->field($field)->find();
+        $this->display();
+    }
+    public function ChangePasHandle(){
+        $id = $_POST['user_id'];
+        $user = array(
+            'user_name'=>$_POST['user_name'],
+            'user_nikename'=>$_POST['user_nikename'],
+            'user_tel'=>$_POST['user_tel'],
+            'user_password'=>I('user_password','','md5')
+        );
+        if(M('user')->where(array('user_id'=>$id))->save($user))
+            $this->success('信息修改成功',U('Admin/Rbac/index'));
+        else
+            $this->error('信息修改失败');
+    }
+    //删除用户
     public function deleteUser(){
         $uid = $_GET['uid'];
         if(M('user')->where(array('user_id'=>$uid))->delete()){

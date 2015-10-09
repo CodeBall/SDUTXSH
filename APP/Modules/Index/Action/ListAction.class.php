@@ -67,6 +67,7 @@ Class ListAction extends Action{
         $this->article = $article;
         $this->display();
     }
+    //报名活动
     public function sign(){
         $id = (int)$_GET['id'];
         $time=$_GET['time'];
@@ -96,6 +97,27 @@ Class ListAction extends Action{
         else{
             $this->error('报名失败');
         }
+    }
+    //添加账号
+    public function AddAccount(){
+        $this->display();
+    }
+    //添加账号表单处理
+    public function AddAccountHandle(){
+        //print_r($_POST);die;
+        //提取用户信息
+        $user = array(
+            'user_name'=>$_POST['user_name'],
+            'user_password'=>I('user_password','','md5'),
+            'user_nikename'=>$_POST['user_nikename'],
+            'user_tel'=>$_POST['user_tel'],
+            'user_status'=>$_POST['user_status'],
+            'login_ip'=>get_client_ip()
+        );
+        if($uid = M('user')->add($user))
+            $this->success('注册成功，等待审核',U('Index/Index/index'));
+        else
+            $this->error('注册失败');
     }
 }
 ?>

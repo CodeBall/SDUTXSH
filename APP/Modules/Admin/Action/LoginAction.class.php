@@ -14,6 +14,9 @@ Class LoginAction extends Action{
         if(!$user || $user['user_password'] != I('user_password','','md5')){
             $this->error('账号或密码错误',U('Admin/Login/index'));
         }
+        if(!$user['user_status']){
+            $this->error('非法用户',U('Index/Index/index'));
+        }
         //更新最后一次登陆ip
         $user = array(
             'user_id'=>$user['user_id'],

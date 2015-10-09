@@ -1,0 +1,87 @@
+<include file="Common:header"/>
+<link rel="stylesheet" href="__PUBLIC__/css/addaccount.css" type="text/css"/>
+
+<include file="Common:nav"/>
+
+<div class="main">
+    <div id="accounts">
+        <form method="post" action="{:U('Index/List/AddAccountHandle')}">
+            <h1>注册新用户</h1><hr/>
+            <table class="table" border="0">
+                <tr>
+                    <td class="left" align="right">用户名称：</td>
+                    <td class="right"><input type="text" name="user_name"/></td>
+                </tr>
+                <tr>
+                    <td class="left" align="right"></td>
+                    <td class="right">用户名是登陆名称，为1-15个字母，数字和符号</td>
+                </tr>
+                <tr>
+                    <td class="left" align="right">用户密码：</td>
+                    <td class="right"><input type="password" name="user_password"/></td>
+                </tr>
+                <tr>
+                    <td class="left"></td>
+                    <td class="right">密码不允许有非法字符，长度在6-20个字符之间</td>
+                </tr>
+                <tr>
+                    <td class="left" align="right">真实姓名：</td>
+                    <td class="right"><input type="text" name="user_nikename"/></td>
+                </tr>
+                <tr>
+                    <td class="left"></td>
+                    <td class="right">真实姓名写组织名，每个组织只允许申请一个账号，忘记密码请联系校学生会网络部</td>
+                </tr>
+                <tr>
+                    <td class="left" align="right">联系邮箱：</td>
+                    <td class="right"><input type="text" name="user_tel"/></td>
+                </tr>
+                <tr>
+                    <td class="left"></td>
+                    <td class="right">请填写正确邮箱，以便确认账号</td>
+                </tr>
+                <tr>
+                    <td class="left"></td>
+                    <td class="right">
+                        <input type="hidden" name="user_status" value="0"/>
+                        <input type="submit" value="提交"/>
+                        <input type="reset" value="重置"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+            <!--<div id="writearea">-->
+                <!--<div class="xiangmu">-->
+                    <!--<div class="top">用户名称：-->
+                        <!--<input type="text" name="user_name" />-->
+                    <!--</div>-->
+                    <!--<div class="bottom">用户名是登陆名称，为1-15个字母，数字和符号</div>-->
+                <!--</div>-->
+                <!--<div class="xiangmu">-->
+                    <!--<div class="top">用户密码：-->
+                        <!--<input type="password" name="user_password" />-->
+                    <!--</div>-->
+                    <!--<div class="bottom">密码不允许有非法字符，长度在6-20个字符之间</div>-->
+                <!--</div>-->
+                <!--<div class="xiangmu">-->
+                    <!--<div class="top"><span>真实姓名：</span>-->
+                    <!--<input type="text" name="user_nikename" /></div>-->
+                    <!--<div class="bottom">真实姓名写组织名，每个组织只允许申请一个账号，忘记密码请联系校学生会网络部</div>-->
+                <!--</div>-->
+                <!--<div class="xiangmu">-->
+                    <!--<div class="top">联系邮箱：-->
+                        <!--<input type="text" name="user_tel" />-->
+                    <!--</div>-->
+                    <!--<div class="bottom">请填写正确邮箱，以便确认账号</div>-->
+                <!--</div>-->
+                <!--<div class="xiangmu">-->
+                    <!--<div id="submit">-->
+                        <!--<input type="hidden" name="user_status" value="0"/>-->
+                        <!--<div id="submit1"><input type="submit" value="提交" /></div>-->
+                        <!--<div id="submit2"><input type="reset" value="重置"/></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+    </div>
+    <include file="Common:bottom"/>

@@ -16,7 +16,7 @@ Class ArticleAction extends CommonAction{
         //在读取主表的时候，如果只想读取表中的某几项，而只有很少的项是不读取的，那么可以先将不读取的项目列出来，然后去掉即可
         //在调用relation方法的时候，如果填写true，那么关联表中有多个表，就都会关联起来，如果只想关联其中的一个表，那么只需要写这个表的名称就可以了
 
-        $this->article = D('ArticleRelation')->where(array('del'=>0))->relation(true)->limit($limit)->select();
+        $this->article = D('ArticleRelation')->where(array('del'=>0))->relation(true)->limit($limit)->order('time desc')->select();
         $this->page = $page->show();
         $this->display();
     }

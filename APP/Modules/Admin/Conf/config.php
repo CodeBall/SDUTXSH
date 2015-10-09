@@ -22,7 +22,7 @@ return array(
     //无需认证的控制方法
     'NOT_AUTH_ACTION'=>'addUserHandle,addRoleHandle,addNodeHandle,
     changeNodeHandle,setAccess,addArticleHandle,changeArticleHandle,addAttrHandle,
-    changeAttrHandle,addCateHandle,changeCateHandle,setAccess',
+    changeAttrHandle,addCateHandle,changeCateHandle,setAccess,ChangePasHandle,ChangeUserHandle',
 
     'RBAC_ROLE_TABLE'=>'role',                      //角色表名称
 

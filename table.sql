@@ -6,6 +6,7 @@ CREATE TABLE `user`(
 `user_password` varchar(64) NOT NULL,
 `user_nikename` varchar(32) DEFAULT NULL,
 `user_tel` varchar(32) NOT NULL,
+`user_status` tinyint(1) NOT NULL,
 `login_ip` varchar(20) NOT NULL,
 PRIMARY KEY (`user_id`)
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
