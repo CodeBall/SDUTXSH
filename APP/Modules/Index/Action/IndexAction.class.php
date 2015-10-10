@@ -11,7 +11,8 @@ Class IndexAction extends Action{
         $this->dongtai = M('article')->where(array('cid'=>8))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
         $this->college_style = M('article')->where(array('cid'=>14))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
         $this->culture = M('article')->where(array('cid'=>15))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
-
+        $this->love = M('article')->where(array('cid'=>16))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
         $this->display();
     }
+
 }

@@ -253,6 +253,7 @@ nav {
     color: #ffffff;
     float: left;
     text-align: center;
+    margin-right: 130px;
 }
 
 .public-title a {
@@ -300,7 +301,7 @@ nav {
 
 .content-top-right-bot {
     width: 620px;
-    height: 160px;
+    height: 350px;
     padding-top: 20px;
 }
 
@@ -310,7 +311,7 @@ nav {
 
 .content-top-right-bot1, .content-top-right-bot2 {
     width: 300px;
-    height: 160px;
+    height: 350px;
 }
 
 .content-top-right-bot ul {

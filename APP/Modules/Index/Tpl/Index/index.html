@@ -10,13 +10,13 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item next left">
-                <img src="__PUBLIC__/img/carousel-3.jpg" alt="0 slide">
+                <img src="__PUBLIC__/img/carousel-3.jpg" width="100%" alt="0 slide">
             </div>
             <div class="item">
-                <img src="__PUBLIC__/img/carousl-2.jpg" alt="1 slide">
+                <img src="__PUBLIC__/img/carousel-2.jpg" width="100%" alt="1 slide">
             </div>
             <div class="item active left">
-                <img src="__PUBLIC__/img/carousel-1.jpg" alt="2 slide">
+                <img src="__PUBLIC__/img/carousel-1.jpg" width="100%" height="320px" alt="2 slide">
             </div>
         </div>
         <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
@@ -48,6 +48,9 @@
                 <div class="public-title">
                     <a href="{:U('Index/List/index',array('id' => 8))}"><h3>校会动态 / <small>News</small></h3></a>
                 </div>
+                <div class="public-title">
+                    <a href="{:U('Index/List/index',array('id' => 16))}"><h3>我爱我师 / <small>Love</small></h3></a>
+                </div>
             </div>
             <div class="content-top-right-bot">
                 <div class="content-top-right-bot1 pull-left">
@@ -60,7 +63,7 @@
                 </div>
                 <div class="content-top-right-bot2 pull-right">
                     <ul>
-                        <volist name="dongtai" id="v" offset='11' length="20">
+                        <volist name="love" id="v" offset='0' length="10">
                             <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></li>
                         </volist>
                     </ul>

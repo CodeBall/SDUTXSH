@@ -86,6 +86,7 @@ CREATE TABLE `article`(
 `auther` varchar(30) not null default '',/*文章作者*/
 `cid` int unsigned not null,/*该文章属于哪一类*/
 `del` tinyint(1) unsigned not null default 0,/*放入回收站*/
+`likeit` int(10) not null default 0,
 PRIMARY KEY (`id`),
 KEY `cid`(`cid`)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
