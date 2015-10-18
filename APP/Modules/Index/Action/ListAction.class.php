@@ -18,7 +18,7 @@ Class ListAction extends Action{
             $this->display('zhishu');
         else if($id == 7)
             $this->display('college');
-        else if($id == 8 ||$id == 9 || $id == 10 || $id == 13 || $id == 14 || $id == 15 || $id == 11)
+        else if($id == 8 || $id == 10 || $id == 13 || $id == 14 || $id == 15 || $id == 11)
         {
             //新闻8，公告10,院会风采14，校园文化15，全体展示页面
             $this->biaoti = M('cate')->where(array('id'=>$id))->find();
@@ -29,10 +29,12 @@ Class ListAction extends Action{
             $limit = $page->firstRow.','.$page->listRows;
 
             $field = array('id','title','time');
-            $this->article = M('article')->field($field)->order('time desc')->where(array('cid'=>$id))->limit($limit)->select();
+            $this->article = M('article')->field($field)->order('time desc')->where(array('cid'=>$id))->where(array('del'=>0))->limit($limit)->select();
             $this->page = $page->show();
             $this->display('news');
         }
+        else if($id == 9)
+            $this->display('Active');
     }
     //为机构设置分栏进行页面选择
     public function chouse_fen(){
@@ -118,49 +120,6 @@ Class ListAction extends Action{
             $this->success('注册成功，等待审核',U('Index/Index/index'));
         else
             $this->error('注册失败');
-    }
-    //文件下载
-
-
-
-
-    function download($file,$name=''){
-        $fileName = $name ? $name : pathinfo($file,PATHINFO_FILENAME);
-        $filePath = realpath($file);
-
-        $fp = fopen($filePath,'rb');
-
-        if(!$filePath || !$fp){
-            header('HTTP/1.1 404 Not Found');
-            echo "Error: 404 Not Found.(server file path error)<!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding --><!-- Padding -->";
-            exit;
-        }
-
-        $fileName = $fileName .'.'. pathinfo($filePath,PATHINFO_EXTENSION);
-        $encoded_filename = urlencode($fileName);
-        $encoded_filename = str_replace("+", "%20", $encoded_filename);
-
-        header('HTTP/1.1 200 OK');
-        header( "Pragma: public" );
-        header( "Expires: 0" );
-        header("Content-type: application/octet-stream");
-        header("Content-Length: ".filesize($filePath));
-        header("Accept-Ranges: bytes");
-        header("Accept-Length: ".filesize($filePath));
-
-        $ua = $_SERVER["HTTP_USER_AGENT"];
-        if (preg_match("/MSIE/", $ua)) {
-            header('Content-Disposition: attachment; filename="' . $encoded_filename . '"');
-        } else if (preg_match("/Firefox/", $ua)) {
-            header('Content-Disposition: attachment; filename*="utf8\'\'' . $fileName . '"');
-        } else {
-            header('Content-Disposition: attachment; filename="' . $fileName . '"');
-        }
-
-        // ob_end_clean(); <--有些情况可能需要调用此函数
-        // 输出文件内容
-        fpassthru($fp);
-        exit;
     }
 }
 ?>

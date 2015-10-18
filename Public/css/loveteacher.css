@@ -1,0 +1,45 @@
+html,body{margin:0;padding:0;}
+ul li{list-style:none;}
+a,p{font-family:"微软雅黑","宋体","黑体";text-decoration:none;}
+header{}
+header .top{width:100%;height:50px;min-width:1080px;}
+.toubu{overflow:hidden;}
+.logo{width:400px;height:60px;float:left;background-size:cover;}
+.nav{width:500px;height:60px;margin-left:30px;float:left;}
+.nav-fen{width:100px;font-size:16px;font-weight:bold;color:white;float:left;}
+.nav-fen img{margin-left:8px }
+.nav-fen a{color:white;}
+.zi{width:750px;height:200px;margin:50px auto;}
+.zi img{width:180px;height:180px;}
+.imgAnimation{
+    animation-name:imgAnimation;
+    animation:imgAnimation 3s alternate infinite;
+    -webkit-animation:imgAnimation 3s alternate infinite;
+    -moz-animation:imgAnimation 3s alternate infinite;
+}
+@-webkit-keyframes imgAnimation{0%{opacity:0}50%{opacity:0.5}100%{opacity:1}}
+@-moz-keyframes imgAnimation{0%{opacity:0}50%{opacity:0.5}100%{opacity:1}}
+.content1{width:100%;height:380px;margin:0 auto;overflow:hidden;}
+.content1-left{width:20%;height:350px;margin:0 20px;float:left;}
+.c1-left-title{height:60px;background-size:cover;}
+.c1-left-title p,.c2-title p{font-size:25px;font-weight:bolder;color:white;letter-spacing:4px;text-align:center;padding-top:12px;}
+.content1-left ul{width:100%;height:280px;margin:0 -40px;}
+.inform{
+    width:100%;
+    height:40px;
+    text-align:center;
+    line-height:2.8;
+    display:block;
+    background-color:#EEEEEE;
+    border-bottom:1px solid #E6E6E6;
+}
+.inform:hover{display:block;background-color:#535353;color:white;}
+.inform a:hover{color:white;}
+.content1-right{width:75%;height:360px;margin:10px 10px;float:left;background-color:#F5F5F5;}
+.c1-right-title{height:60px;background-size:cover;}
+.content2{width:100%;height:450px;margin-top:30px;}
+.c2-title{width:97%;height:60px;background-size:cover;margin:0 auto;}
+.content2 ul{width:94%;height:330px;border:1px solid #A0A0A0;margin:10px 20px;}
+.sub{width:100%;height:70px;background-color:#FFFFFF;border-bottom:1px solid #A0A0A0;margin:10px -20px;}
+.footer{width:97%;height:50px;margin:0 auto;background-color:#535353;}
+.footer p{font-size:15px;color:white;text-align:center;line-height:3;}

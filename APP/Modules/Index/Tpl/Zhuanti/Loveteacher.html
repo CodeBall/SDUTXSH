@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我爱我师</title>
+    <link rel="icon" href="/APP/Image/sdutxsh.png">
+    <link rel="stylesheet" href="__PUBLIC__/css/loveteacher.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"/>
+</head>
+<body>
+<!--top-->
+<header class="top" style='width:100%;height:400px;background:url("__PUBLIC__/img/woaiwoshi/header.jpg") no-repeat;background-size: cover;'>
+    <div class="toubu">
+        <div class="logo">
+           <a href="{:U('Index/Index/index')}"> <img src="__PUBLIC__/img/logo.png" width="450px" height="60px"/></a>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li class="nav-fen">
+                    <a href="#">首　　页</a>
+                    <img src="__PUBLIC__/img/woaiwoshi/shu.png" />
+                </li>
+                <li class="nav-fen">
+                    <a href="{:U('Index/Zhuanti/article_list',array('id'=>17))}">活动动态</a>
+                    <img src="__PUBLIC__/img/woaiwoshi/shu.png" />
+                </li>
+                <li class="nav-fen">
+                    <a href="{:U('Index/Zhuanti/article_list',array('id'=>18))}">教师风采</a>
+                    <img src="__PUBLIC__/img/woaiwoshi/shu.png" />
+                </li>
+                <li class="nav-fen">
+                    <a href="{:U('Index/Zhuanti/article_list',array('id'=>19))}">学院报道</a>
+                    <img src="__PUBLIC__/img/woaiwoshi/shu.png" />
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--<div class="zi imgAnimation">-->
+        <!--<img src="__PUBLIC__/img/wo.jpg"/>-->
+        <!--<img src="__PUBLIC__/img/ai.jpg"/>-->
+        <!--<img src="__PUBLIC__/img/wo1.jpg"/>-->
+        <!--<img src="__PUBLIC__/img/shi.jpg"/>-->
+    <!--</div>-->
+</header>
+<!--content/mid-->
+<div class="content1">
+    <div class="content1-left">
+        <div class="c1-left-title" style='background:url("__PUBLIC__/img/woaiwoshi/information.jpg") no-repeat'>
+            <p>活动动态</p>
+        </div>
+        <div class="container" style="width:100%;height: auto">
+            <table class="table table-striped table-hover">
+                <volist name="hddt" id="v" offset='0' length="8">
+                    <tr><td><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></td></tr>
+                </volist>
+            </table>
+        </div>
+    </div>
+    <div class="content1-right">
+        <div class="c1-right-title" style='background:url("__PUBLIC__/img/woaiwoshi/teacher.jpg") no-repeat;'></div>
+            <div id="carousel" class="carousel slide" data-ride="carousel" style="width: 40%;height: 70%;margin: 10px;float: left">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="__PUBLIC__/img/1.jpg" alt="...">
+                        <div class="carousel-caption">
+                            合影1
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="__PUBLIC__/img/3.jpg" alt="...">
+                        <div class="carousel-caption">
+                            合影2
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="__PUBLIC__/img/2.jpg" alt="...">
+                        <div class="carousel-caption">
+                            合影3
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        <div style="width: 55%;height: 80%;float: left;margin:10px;">
+            <table class="table table-striped table-hover">
+                <volist name="jsfc" id="v" offset='0' length="8">
+                    <tr><td><a class="teacher" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></td></tr>
+                </volist>
+            </table>
+        </div>
+    </div>
+</div>
+<!--bottom-->
+<div class="content2">
+    <div class="c2-title" style='background:url("__PUBLIC__/img/woaiwoshi/submission.jpg") no-repeat;'>
+        <p>学院投稿 &nbsp;&nbsp;News submission</p>
+    </div>
+    <div style="width: 97%;height: 83%;margin-top: 10px;margin-left:20px;">
+        <table class="table table-striped table-hover">
+            <volist name="xytg" id="v" offset='0' length="4">
+                <tr>
+                    <td>
+                        <p><a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></p>
+                        <h7 class="cont">{$v.content}</h7>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+    </div>
+</div>
+<!--footer-->
+<footer class="footer">
+    <p>Copyright ©2015 山东理工大学学生会
+    </p>
+</footer>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--<link rel="stylesheet" href="__PUBLIC__/js/jquery.min.js"/>-->
+<!--<link rel="stylesheet" href="__PUBLIC__/js/bootstrap.min.js"/>-->
+<script>
+    $(document).ready(function () {
+        $(".title").each(function() {
+            var maxlength = 8;
+            if($(this).text().length>maxlength) {
+                $(this).text($(this).text().substring(0, maxlength));
+                $(this).html($(this).html()+"...");
+            }
+        });
+    });
+    $(document).ready(function () {
+        $(".teacher").each(function() {
+            var maxlength = 18;
+            if($(this).text().length>maxlength) {
+                $(this).text($(this).text().substring(0, maxlength));
+                $(this).html($(this).html()+"...");
+            }
+        });
+    });
+    $(document).ready(function () {
+        $(".cont").each(function() {
+            var maxlength = 160;
+            if($(this).text().length>maxlength) {
+                $(this).text($(this).text().substring(0, maxlength));
+                $(this).html($(this).html()+"...");
+            }
+        });
+    });
+</script>
+</body>
+</html>

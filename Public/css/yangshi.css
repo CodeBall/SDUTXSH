@@ -50,28 +50,30 @@ html,body {
 
 .logo-right {
     width: 280px;
-    height: 90px;
+    height: 120px;
     float: right;
 }
 
 .focus {
+    clear: both;
     width: 280px;
-    height: 25px;
+    height: 100px;
     margin-top: 20px;
 }
-
-.weibo {
-    width: 100px;
-    height: 25px;
+.weixin{
+    width: 50px;
+    height: 50px;
+    float: left;
 }
-
-.renren {
-    margin-left: 20px;
+.weibo{
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
 }
 
 .search {
     width: 280px;
-    height: 45px;
+    height: 36px;
 }
 
 .search-in {
