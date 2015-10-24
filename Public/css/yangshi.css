@@ -29,12 +29,13 @@ html,body {
     width: 100%;
     height: 260px;
     background-color: #0694D4;
+    padding-top: 40px;
 }
 
 .logo {
     width: 960px;
     height: 90px;
-    padding-top: 40px;
+
 }
 
 .logo-left {
@@ -48,9 +49,22 @@ html,body {
     height: 90px;
 }
 
+.erwei {
+    position: absolute;
+    top: 169px;
+    z-index: 1;
+    margin-left: 25px;
+    width: 100px;
+    height: 100px;
+}
+
+.erwei img {
+    display: none;
+}
+
 .logo-right {
     width: 280px;
-    height: 120px;
+    height: 90px;
     float: right;
 }
 
@@ -106,7 +120,7 @@ html,body {
 nav {
     width: 960px;
     height: 90px;
-    padding-top:80px;
+    padding-top:45px;
     position: relative;
 }
 .nav-list {

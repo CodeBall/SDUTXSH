@@ -107,6 +107,10 @@ Class ListAction extends Action{
     //添加账号表单处理
     public function AddAccountHandle(){
         //print_r($_POST);die;
+        if($_POST['user_name'] == 'admin'){
+            $this->error('注册失败,请更换注册账号信息');
+        }
+        else{
         //提取用户信息
         $user = array(
             'user_name'=>$_POST['user_name'],
@@ -120,6 +124,7 @@ Class ListAction extends Action{
             $this->success('注册成功，等待审核',U('Index/Index/index'));
         else
             $this->error('注册失败');
+        }
     }
 }
 ?>
