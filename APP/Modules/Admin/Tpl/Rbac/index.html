@@ -43,8 +43,7 @@
             </td>
             <td>
                 <a href="{:U('Admin/Rbac/deleteUser',array('uid'=>$v['user_id']))}">删除</a>&nbsp;
-                <a href="{:U('Admin/Rbac/ChangeUser',array('uid'=>$v['user_id']))}">角色</a>&nbsp;
-                <a href="{:U('Admin/Rbac/ChangePas',array('uid'=>$v['user_id']))}">改密</a>&nbsp;
+                <a href="{:U('Admin/Rbac/ChangeUser',array('uid'=>$v['user_id']))}">修改</a>&nbsp;
                 <if condition='$v["user_status"] eq 0'>
                     <a href="{:U('Admin/Rbac/changestatus',array('uid'=>$v['user_id'],'user_status'=>1))}">开启</a>
                     <else/>

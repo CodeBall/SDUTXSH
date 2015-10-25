@@ -56,7 +56,7 @@ Class RbacAction extends CommonAction{
             $this->error('更改失败');
 
     }
-    //修改用户权限
+    //修改用户信息
     public function ChangeUser(){
         $uid = (int)$_GET['uid'];
         $field = array('user_id','user_name','user_nikename','user_tel');
@@ -68,6 +68,22 @@ Class RbacAction extends CommonAction{
         $id = $_POST['user_id'];
         M('role_user')->where(array('user_id'=>$id))->delete();
         $role = array();
+        if($_POST['user_password']){
+            $user = array(
+                'user_name'=>$_POST['user_name'],
+                'user_nikename'=>$_POST['user_nikename'],
+                'user_tel'=>$_POST['user_tel'],
+                'user_password'=>I('user_password','','md5')
+            );
+        }
+        else{
+            $user = array(
+                'user_name'=>$_POST['user_name'],
+                'user_nikename'=>$_POST['user_nikename'],
+                'user_tel'=>$_POST['user_tel'],
+            );
+        }
+        M('user')->where(array('user_id'=>$id))->save($user);
         if(M('user')->where(array('user_id'=>$id))->find()){
             foreach($_POST['role_id'] as $v){
                 $role[] = array(
@@ -76,30 +92,10 @@ Class RbacAction extends CommonAction{
                 );
             }
             M('role_user')->addAll($role);
-            $this->success('修改用户角色成功',U('Admin/Rbac/index'));
+            $this->success('修改用户信息成功',U('Admin/Rbac/index'));
         }
         else
             $this->error('修改失败');
-    }
-    //修改基本信息
-    public function ChangePas(){
-        $uid = (int)$_GET['uid'];
-        $field = array('user_id','user_name','user_password','user_nikename','user_tel');
-        $this->user = M('user')->where(array('user_id'=>$uid))->field($field)->find();
-        $this->display();
-    }
-    public function ChangePasHandle(){
-        $id = $_POST['user_id'];
-        $user = array(
-            'user_name'=>$_POST['user_name'],
-            'user_nikename'=>$_POST['user_nikename'],
-            'user_tel'=>$_POST['user_tel'],
-            'user_password'=>I('user_password','','md5')
-        );
-        if(M('user')->where(array('user_id'=>$id))->save($user))
-            $this->success('信息修改成功',U('Admin/Rbac/index'));
-        else
-            $this->error('信息修改失败');
     }
     //删除用户
     public function deleteUser(){

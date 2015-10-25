@@ -107,8 +107,9 @@ Class ListAction extends Action{
     //添加账号表单处理
     public function AddAccountHandle(){
         //print_r($_POST);die;
-        if($_POST['user_name'] == 'admin'){
-            $this->error('注册失败,请更换注册账号信息');
+        $use = M('user')->where(array('user_name'=>$_POST['user_name']))->select();
+        if($use){
+            $this->error('注册账号信息已经存在,注册失败');
         }
         else{
         //提取用户信息
