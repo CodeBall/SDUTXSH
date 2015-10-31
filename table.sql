@@ -115,6 +115,19 @@ CREATE TABLE IF NOT EXISTS `sign_up`(
 PRIMARY KEY (`sign_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+/*文件下载表*/
+CREATE TABLE IF NOT EXISTS `file`(
+`file_id` int(10) unsigned not null AUTO_INCREMENT,
+`file_savepath` varchar(60) NOT NULL DEFAULT '',/*上传文件的保存路径*/
+`file_name` varchar(60) NOT NULL default '',/*上传文件的原始名称*/
+`file_savename` varchar(60) NOT NULL default '',/*上传文件的保存名称*/
+`file_size` int(10) unsigned not null,/*上传文件的大小*/
+`file_type` varchar(10) NOT NULL default '',/*上传文件的MIME类型*/
+`file_extension` varchar(10) NOT NULL default '',/*上传文件的后缀类型*/
+`file_hash` varchar(20) NOT NULL default '',/*上传文件的哈希验证字符串*/
+PRIMARY KEY (`file_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 
 
 

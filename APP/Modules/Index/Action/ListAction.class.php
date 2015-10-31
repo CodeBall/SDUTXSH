@@ -35,6 +35,11 @@ Class ListAction extends Action{
         }
         else if($id == 9)
             $this->display('Active');
+        else if($id == 12) {
+            $field = array('file_id','file_name');
+            $this->file = M('file')->field($field)->order('file_id desc')->select();
+            $this->display('File');
+        }
     }
     //为机构设置分栏进行页面选择
     public function chouse_fen(){

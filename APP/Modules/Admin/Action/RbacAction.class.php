@@ -186,7 +186,7 @@ Class RbacAction extends CommonAction{
         }
     }
     //修改节点
-    public function changeNode(){
+        public function changeNode(){
         $node_id = I('id',0,'intval');
         if($node_id == 0)
             $this->error("没有找到该节点");

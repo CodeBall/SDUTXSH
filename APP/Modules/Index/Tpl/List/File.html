@@ -1,0 +1,17 @@
+<include file="Common:header"/>
+
+<include file="Common:nav"/>
+
+<div class="main">
+    <div style="padding-top: 20px;width: 900px;height: 300px;">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                资料下载
+            </a>
+            <foreach name="file" item="v">
+                <a href="{:U('Index/Download/file_download',array('id'=>$v['file_id']))}" class="list-group-item">
+                    {$v.file_name}</a>
+            </foreach>
+        </div>
+    </div>
+    <include file="Common:bottom"/>

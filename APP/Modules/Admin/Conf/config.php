@@ -20,9 +20,10 @@ return array(
     'NOT_AUTH_MODULE'=>'Index',                     //无需认证的控制器
 
     //无需认证的控制方法
-    'NOT_AUTH_ACTION'=>'addUserHandle,addRoleHandle,addNodeHandle,
+    'NOT_AUTH_ACTION'=>'addUserHandle,ChangeUserHandle,addRoleHandle,addNodeHandle,
     changeNodeHandle,setAccess,addArticleHandle,changeArticleHandle,addAttrHandle,
-    changeAttrHandle,addCateHandle,changeCateHandle,setAccess,ChangePasHandle,ChangeUserHandle',
+    changeAttrHandle,addCateHandle,changeCateHandle,setAccess,ChangePasHandle,ChangeUserHandle,
+    deleteArticle,restore',
 
     'RBAC_ROLE_TABLE'=>'role',                      //角色表名称
 
