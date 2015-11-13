@@ -1,45 +1,275 @@
 html,body{margin:0;padding:0;}
 ul li{list-style:none;}
+body{
+    width: 100%;
+    height: auto;
+}
 a,p{font-family:"微软雅黑","宋体","黑体";text-decoration:none;}
-header{}
-header .top{width:100%;height:50px;min-width:1080px;}
+header{
+    width:100%;
+    height:430px;
+    background:url("../img/woaiwoshi/banner.jpg") no-repeat;
+    background-size: cover;
+}
+header .top{width:100%;height:auto;min-width:1080px;}
 .toubu{overflow:hidden;}
 .logo{width:400px;height:60px;float:left;background-size:cover;}
 .nav{width:500px;height:60px;margin-left:30px;float:left;}
 .nav-fen{width:100px;font-size:16px;font-weight:bold;color:white;float:left;}
 .nav-fen img{margin-left:8px }
 .nav-fen a{color:white;}
-.zi{width:750px;height:200px;margin:50px auto;}
-.zi img{width:180px;height:180px;}
-.imgAnimation{
-    animation-name:imgAnimation;
-    animation:imgAnimation 3s alternate infinite;
-    -webkit-animation:imgAnimation 3s alternate infinite;
-    -moz-animation:imgAnimation 3s alternate infinite;
+.hbody{
+    width: 100%;
+    height: 360px;
 }
-@-webkit-keyframes imgAnimation{0%{opacity:0}50%{opacity:0.5}100%{opacity:1}}
-@-moz-keyframes imgAnimation{0%{opacity:0}50%{opacity:0.5}100%{opacity:1}}
-.content1{width:100%;height:380px;margin:0 auto;overflow:hidden;}
-.content1-left{width:20%;height:350px;margin:0 20px;float:left;}
-.c1-left-title{height:60px;background-size:cover;}
-.c1-left-title p,.c2-title p{font-size:25px;font-weight:bolder;color:white;letter-spacing:4px;text-align:center;padding-top:12px;}
-.content1-left ul{width:100%;height:280px;margin:0 -40px;}
-.inform{
-    width:100%;
-    height:40px;
-    text-align:center;
-    line-height:2.8;
-    display:block;
-    background-color:#EEEEEE;
-    border-bottom:1px solid #E6E6E6;
+.title_wei{
+    width: 800px;
+    height: 200px;
+    margin-left: 280px;
+    margin-top: 50px;
+    text-align: center;
 }
-.inform:hover{display:block;background-color:#535353;color:white;}
-.inform a:hover{color:white;}
-.content1-right{width:75%;height:360px;margin:10px 10px;float:left;background-color:#F5F5F5;}
-.c1-right-title{height:60px;background-size:cover;}
-.content2{width:100%;height:450px;margin-top:30px;}
-.c2-title{width:97%;height:60px;background-size:cover;margin:0 auto;}
-.content2 ul{width:94%;height:330px;border:1px solid #A0A0A0;margin:10px 20px;}
-.sub{width:100%;height:70px;background-color:#FFFFFF;border-bottom:1px solid #A0A0A0;margin:10px -20px;}
-.footer{width:97%;height:50px;margin:0 auto;background-color:#535353;}
-.footer p{font-size:15px;color:white;text-align:center;line-height:3;}
+.box{
+    width: 300px;
+    height: 30px;
+    margin-left: 450px;
+}
+.box p{
+    font-size: 20pt;
+    color: #31b0d5;
+}
+.cont{
+    width: 100%;
+    height: auto;
+    /*background-color: #31b0d5;*/
+}
+/*第一排内容*/
+.cont1{
+    width: 100%;
+    height: 420px;
+    /*background-color:#4cae4c;*/
+    margin-top: 5px;
+}
+.cont1_jsfc{
+    width: 55%;
+    height: 420px;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+}
+.title_jsfc{
+    width: 100%;
+    margin-top: 5px;
+    height: 39px;
+}
+.title_jsfc img{
+    width: 100%;
+    height: 100%;
+}
+#content_jsfc_top{
+    border: 1px solid #FFC1C1;
+    overflow: hidden;
+    width: 100%;
+    height: 370px;
+    /*background-color: yellow;*/
+}
+#cont_top_wc{
+    float: left;
+    width: 700%;
+}
+#ceng1{
+    float: left;
+
+}
+#ceng2{
+    float: left;
+}
+
+#cont_top_wc span a {
+    position: relative;
+    display: inline-block;
+    height: 200px;
+}
+#cont_top_wc span p {
+    position: absolute;
+    font-size: 12px;
+    left: 20px;
+    top:20px;
+    display: none;
+}
+
+#cont_top_wc img:hover {
+    z-index: 1;
+    opacity: 0.3;
+    transition: ease-out 0.5s;
+}
+#content_jsfc_top #cont_top_wc span{
+    text-align: center;
+    height: 160px;
+    width: 120px;
+    margin-right:10px;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    display: inline;
+    float: left;
+}
+#cont_top_wc img{
+    width: 120px;
+    height: 160px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.cont1_hdgg{
+    width: 40%;
+    height: 420px;
+    margin-right: 1%;
+    /*background-color: tan;*/
+    float: left;
+}
+.title_hdgg{
+    width: 100%;
+    margin-top: 5px;
+    height: 47px;
+}
+.title_hdgg img{
+    width: 100%;
+    height: 100%;
+}
+.content_hdgg{
+    border: 1px solid #FFC1C1;
+    width: 100%;
+    height: 87%;
+    /*background-color: yellow;*/
+}
+.more a{
+    font-size: 15pt;
+    float: right;
+    margin-right: 40px;
+}
+.cont a{
+    color: #717171;
+}
+.cont ul{
+    margin-left: -40px;
+    margin-top: 10px;
+}
+.cont ul li{
+    margin-top: 7px;
+}
+/*第二排内容*/
+.cont2{
+    clear: both;
+    width: 100%;
+    height: 350px;
+    background-color:#FAFAFA;
+    margin-top: 20px;
+}
+.cont2_hddt{
+    width: 28%;
+    height: 350px;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+}
+.title_hddt{
+    width: 100%;
+    height: 48px;
+}
+.title_hddt img{
+    width: 100%;
+    height: 100%;
+}
+.cont2_hddt_top{
+    border: 1px solid #FFC1C1;
+    width: 100%;
+    height: 295px;
+    margin-top: 1px;
+    /*background-color: red;*/
+}
+.cont2_zwzs{
+    float: left;
+    width: 66%;
+    height: 350px;
+    margin-right:2%;
+}
+.title_zwzs{
+    width: 100%;
+    height: 48px;
+}
+.title_zwzs img{
+    width: 100%;
+    height: 100%;
+}
+.cont2_zwzs_top{
+    border: 1px solid #FFC1C1;
+    width: 100%;
+    height: 295px;
+    margin-top: 1px;
+    /*background-color: blue;*/
+}
+/*第三排内容*/
+.cont3{
+    clear: both;
+    width: 96%;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 2%;
+}
+.title_hdjy{
+    float: left;
+    width: 100%;
+    height: 61px;
+    margin-top: 20px;
+    background: url("../img/woaiwoshi/hdjy.jpg");
+}
+#cont3_hdjy_top{
+    overflow: hidden;
+    border: 1px solid #FFC1C1;
+    float: left;
+    width: 100%;
+    height: 230px;
+    margin-top: 1px;
+    /*background-color: blue;*/
+}
+#cont3_top_wc{
+    float: left;
+    width: 700%;
+}
+
+#cont3_ceng1{
+    float: left;
+
+}
+#cont3_ceng2{
+    float: left;
+}
+#cont3_top_wc img{
+    width: 260px;
+    height: 200px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#cont3_hdjy_top #cont3_top_wc span{
+    text-align: center;
+    height: 200px;
+    width: 260px;
+    margin-right:10px;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    display: inline;
+    float: left;
+}
+
+/*底部*/
+.botto{
+    clear: both;
+    width: 100%;
+    margin-top: 30px;
+    height: 45px;
+    background: url("../img/woaiwoshi/bottom.jpg");
+}
+

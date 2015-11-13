@@ -10,9 +10,9 @@ Class ZhuantiAction extends Action{
     //我爱我师——我心中最爱的老师专题页面加载
     public function Loveteacher(){
         $this->jsfc = M('article')->where(array('cid'=>18))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
-        $this->xytg = M('article')->where(array('cid'=>19))->where(array('del'=>0))->field(array('id','title','content','time'))->order('time desc')->select();
+        $this->hdgg = M('article')->where(array('cid'=>19))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
         $this->hddt = M('article')->where(array('cid'=>17))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
-
+        $this->zwzs = M('article')->where(array('cid'=>20))->where(array('del'=>0))->field(array('id','title','time'))->order('time desc')->select();
         $this->display();
     }
     //文章列表展示页面

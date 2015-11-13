@@ -25,7 +25,9 @@
                 <select name="cid">
                     <option value="">====请选择分类====</option>
                     <foreach name="cate" item="v">
-                        <option value="{$v['id']}">{$v.html}{$v.name}</option>
+                        <if condition="$v['id'] gt '7'">
+                            <option value="{$v['id']}">{$v.html}{$v.name}</option>
+                        </if>
                     </foreach>
                 </select>
             </td>

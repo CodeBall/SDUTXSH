@@ -227,9 +227,9 @@ nav {
     width: 300px;
     height: 400px;
     float: left;
-    background-color: #ffffff;
-    border: 1px solid grey;
-    border-radius: 10px;
+    /*background-color: #ffffff;*/
+    /*border: 1px solid grey;*/
+    /*border-radius: 10px;*/
 }
 
 .content-top-left img {
@@ -259,7 +259,7 @@ nav {
     width: 620px;
     height: 40px;
     /*margin-top: 10px;*/
-    border-bottom: 1px solid #717171;
+    /*border-bottom: 1px solid #717171;*/
 }
 
 .public-title {

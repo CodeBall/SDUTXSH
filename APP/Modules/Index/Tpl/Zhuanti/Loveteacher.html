@@ -6,13 +6,21 @@
     <link rel="icon" href="/APP/Image/sdutxsh.png">
     <link rel="stylesheet" href="__PUBLIC__/css/loveteacher.css"/>
     <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/reveal-it.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/normalize.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+    <script src="__PUBLIC__/js/jquery-1.11.3.min.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
 </head>
 <body>
+<body onload="init();">
 <!--top-->
-<header class="top" style='width:100%;height:400px;background:url("__PUBLIC__/img/woaiwoshi/header.jpg") no-repeat;background-size: cover;'>
+<header class="top">
     <div class="toubu">
         <div class="logo">
-           <a href="{:U('Index/Index/index')}"> <img src="__PUBLIC__/img/logo.png" width="450px" height="60px"/></a>
+            <a href="{:U('Index/Index/index')}"> <img src="__PUBLIC__/img/woaiwoshi/logo.png" width="450px" height="60px"/></a>
         </div>
         <nav class="nav">
             <ul>
@@ -35,135 +43,395 @@
             </ul>
         </nav>
     </div>
-    <!--<div class="zi imgAnimation">-->
-        <!--<img src="__PUBLIC__/img/wo.jpg"/>-->
-        <!--<img src="__PUBLIC__/img/ai.jpg"/>-->
-        <!--<img src="__PUBLIC__/img/wo1.jpg"/>-->
-        <!--<img src="__PUBLIC__/img/shi.jpg"/>-->
-    <!--</div>-->
-</header>
-<!--content/mid-->
-<div class="content1">
-    <div class="content1-left">
-        <div class="c1-left-title" style='background:url("__PUBLIC__/img/woaiwoshi/information.jpg") no-repeat'>
-            <p>活动动态</p>
+    <div class="hbody">
+        <div class="title_wei" id="title_wei">
+            <div>
+                <canvas id="canvas1" width="700px" height="200px"></canvas>
+            </div>
+            <div class="box" id="box">
+                <p class="box1">__爱要大声说出来</p>
+            </div>
         </div>
-        <div class="container" style="width:100%;height: auto">
-            <table class="table table-striped table-hover">
-                <volist name="hddt" id="v" offset='0' length="8">
-                    <tr><td><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></td></tr>
-                </volist>
-            </table>
-        </div>
-    </div>
-    <div class="content1-right">
-        <div class="c1-right-title" style='background:url("__PUBLIC__/img/woaiwoshi/teacher.jpg") no-repeat;'></div>
-            <div id="carousel" class="carousel slide" data-ride="carousel" style="width: 40%;height: 70%;margin: 10px;float: left">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel" data-slide-to="1"></li>
-                    <li data-target="#carousel" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="__PUBLIC__/img/1.jpg" alt="...">
-                        <div class="carousel-caption">
-                            合影1
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="__PUBLIC__/img/3.jpg" alt="...">
-                        <div class="carousel-caption">
-                            合影2
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="__PUBLIC__/img/2.jpg" alt="...">
-                        <div class="carousel-caption">
-                            合影3
-                        </div>
+        <div class="container" id="container">
+            <div class="row images" id="images">
+                <div class="image-one">
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/1hp.jpg" id="1" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/2kwh.jpg" id="2" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/3lzm.jpg" id="3" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/4lzy.jpg" id="4" onclick="show(this)"/>
+                </div>
+                <div class="image-two">
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/5ths.jpg" id="5" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/6wzh.jpg" id="6" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/7zb.jpg" id="7" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/8zxw.jpg" id="8" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/9zjy.jpg" id="9" onclick="show(this)"/>
+                    <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/10zcc.jpg" id="10" onclick="show(this)"/>
+                </div>
+            </div>
+            <div class="row content_images" id="content_images">
+                <div class="cont_images" id="c1">
+                    <img src="__PUBLIC__/img/woaiwoshi/1hp.jpg" id="img1" width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">胡鹏</h4>
+                        胡鹏,毕业于山东体育学院，上海体育学院在读硕士，武术六段，获国家一级武士称号。现任山东理工大学体育学院老师、2013届兼职辅导员。2002年至今担任学院武术协会指导老师，并连续多年荣获“优秀指导老师”称号。教学中注重理论与实践相结合，深受学生好评。从2002年至今，担任校秋运会武术表演指导老师。科研方面，2010年作为编委编著《新编大学体育教程》；担任第十一届全运会武术套路比赛裁判工作；指导团队荣获2009年全国基本功大赛团体二等奖；自2010年连续三年荣获全国武术学校武术套路比赛中“优秀裁判员”称号
                     </div>
                 </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="cont_images" id="c2">
+                    <img src="__PUBLIC__/img/woaiwoshi/2kwh.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">孔维华</h4>
+                        孔维华，男，出生于1968年8月，硕士，副教授，硕士研究生导师。现任建筑工程学院测绘工程系主任，山东省测绘学会会员，主讲本科生课程《GIS工程实践》、《遥感原理与应用》，研究生课程《城市地理信息系统》；教学效果良好，先后三次获得教学质量奖、近两学期教学评价情况优秀；发表学术论文20余篇，参与国家863子课题1项，主持山东省自然科学基金1项、山东省重点实验室基金1项、横向项目十余项，科研经费近百万元。曾获得校级优秀教师、优秀共产党员称号；获得山东省教学成果三等奖1项，校级教学成果二等奖2项等
+                    </div>
+                </div>
+                <div class="cont_images" id="c3">
+                    <img src="__PUBLIC__/img/woaiwoshi/3lzm.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">李震梅</h4>
+                        李震梅，女，硕士，教授，主要教授模拟电子技术、数字电子技术、电工学等课程，以及从事毕业设计、课程设计等实践性教学，教学效果好，连续多年获教学质量奖，获第二、三、四、五、六届教学优秀奖，获山东理工大学2011年度“大学时期，我心目中最好的老师”及第三届“三育人”标兵，获第一、二届教师优秀教案展评二等奖。主持和参加山东省教学研究课题8项，校级教学研究课题十多项，获山东省教学成果一等奖二项、三等奖一项、校级教学成果一等奖四项；作为第一作者，近几年公开发表论文40多篇，被SCI、EI检索20多篇，主持和参加山东省自然科学基金2项，横向课题4项。
+                    </div>
+                </div>
+                <div class="cont_images" id="c4">
+                    <img src="__PUBLIC__/img/woaiwoshi/4lzy.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">李志永</h4>
+                        李志永，男，37岁，教授，博士，硕士研究生导师，山东理工大学机械工程学院机械制造系主任，我校精密制造与表面工程协同创新中心主任，其研究成果“航空发动机复杂曲面零部件精密电解加工技术”获得2010年度国防科技进步一等奖。主持国家自然科学基金一项，山东省自然科学基金一项，作为主要人员参与863计划项目、国家自然科学基金、山东省中青年科学家奖励基金项目多项。首位发表学术论文60余篇，其中SCI收录4篇，EI收录40余篇。 2007-2012年连续6年获得“教学质量奖”荣誉称号，并同时获得我校第五届、第六届“教学优秀奖”荣誉称号，教学效果评价优秀。
+                    </div>
+                </div>
+                <div class="cont_images" id="c5">
+                    <img src="__PUBLIC__/img/woaiwoshi/5ths.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">谭洪生</h4>
+                        谭洪生，男，1962年生，教授，浙江大学高分子科学与工程学系高分子材料专业硕士、材料加工工程专业博士毕业。现任山东理工大学材料学院高分子材料系主任、硕士生导师。国际先进材料与技术工艺学会（SAMPE）北京分会会员。曾获山东省技术发明二等奖（首位）、第二届中国专利与名牌博览会金奖（首位）、国家科委“七·五”攻关优秀项目奖各1项，中国石化集团公司科技进步奖两项，中国石化股份有限公司齐鲁分公司、淄博市科技进步奖6项。参加国家科委攻关项目、973各1项、自然科学基金两项，主持和参加完成省科技发展计划项目3项，在研省自然科学基金1项，企业合作课题多项。发表论文五十余篇，授权及申请发明专利4项。 2011年获校优秀教师，连续5年获校教学质量奖，并获校第六届教学优秀奖。
+                    </div>
+                </div>
+                <div class="cont_images" id="c6">
+                    <img src="__PUBLIC__/img/woaiwoshi/6wzh.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">王振红</h4>
+                        王振红，女，经济学硕士，讲师，现任商学院经济学系党支部书记，毕业于同济大学。曾获2010、2011、2012年度教学质量奖；2009、2011年度校级优秀教师；2012年度理工先锋共产党员。从教以来，教学质量评价均为优秀，学生评价多次为满分。积极从事西方经济学的教学改革与实践，出版西方经济学教材2部（合著），发表教学研究论文3篇.现任经济1202班的班主任，积极为考研学子答疑解惑，近年来资助困难学生4人。主持山东省软科学研究计划项目1项，参与国家社科基金项目3项，省部级项目4项；参编专著1部。在《中国青年研究》、《统计与决策》等期刊发表论文多篇。
+                    </div>
+                </div>
+                <div class="cont_images" id="c7">
+                    <img src="__PUBLIC__/img/woaiwoshi/7zb.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">张波</h4>
+                        张波，男，本科学历，副教授，淄博市人大常委会地方立法专家咨询委员、无棣县人民检察院助理检察长。始终秉持“以学生为中心”的基本理念，出色完成了刑事诉讼法、证据法、法学学科导论等课程的教学工作，先后获山东理工大学一、四、五、六届教学优秀奖和多次教学质量奖，并认真做好法律系主任、模拟法庭实验室主任等管理工作。先后在《人民论坛》、《企业经济》等期刊发表法学专业论文30余篇，出版法学专著和法学教材7部，承担省部级和校级科研课题20余项。
+                    </div>
+                </div>
+                <div class="cont_images" id="c8">
+                    <img src="__PUBLIC__/img/woaiwoshi/8zxw.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">张先伟</h4>
+                        张先伟，男，计算机科学与技术学院副教授，国家卓越工程师计划第一届、第二届计算机卓越班班主任。主要讲授数据结构、程序设计基础、操作系统等课程。2003年至2012年连续10年获得山东理工大学教学质量奖；连续获得山东理工大学第二届、第三届、第四届、第五届、第六届教学优秀奖；获得山东理工大学教学成果一等奖1项，获得山东理工大学教学成果二等奖3项；获得2013年山东理工大学优秀教师称号。主持教育部、财政部教学研究项目子课题一项，参与完成教育部教学研究项目一项，主编国家十一五规划教材一部。
+                    </div>
+                </div>
+                <div class="cont_images" id="c9">
+                    <img src="__PUBLIC__/img/woaiwoshi/9zjy.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">赵剑英</h4>
+                        赵剑英，女，出生于1972年1月，担任山东理工大学化工学院副教授、化学系主任兼化学系党支部书记。1995年获得南开大学化学系高分子化学与物理专业学士学位，1998年获得南开大学化学系高分子化学与物理专业硕士学位， 2007获得中国科学院长春应用化学研究所有机化学博士学位。发表文章10篇，申请发明专利5项。曾经获评淄博市“三八”红旗手，山东理工大学优秀共产党员称号、优秀教师2次、教学质量奖2次、先进工作者2次、工会活动积极分子2次，并在“我爱我师”活动中被学生评选为“我心中最爱的老师”。
+                    </div>
+                </div>
+                <div class="cont_images" id="c10">
+                    <img src="__PUBLIC__/img/woaiwoshi/10zcc.jpg"  width="400" height="300" alt="">
+                    <div class="wenzi">
+                        <h4 style="text-align: center">周长城</h4>
+                        周长城,男,博士,教授.中国机械工程协会高级会员.学校特殊津贴二层次人才,获学校教书育人标兵、优秀教师、优秀研究生指导教师、毕业生就业工作先进个人和市专业技术拔尖人才等荣誉称号。担任省精品课程《汽车理论》和通识课程《综合素质及创新能力》负责人，教学效果评价优秀。主持省级科研项目3项，横向3项，发表学术论文136篇，其中，EI收录42篇，软件著作权2项，发明专利50多项，出版学术专著5部。获省高等学校优秀教材二等奖1项,省软科学二等奖1项,校教学成果二等奖1项,中国汽车工业科技进步三等奖1项,省高等学校优秀科研成果三等奖2项,校科技进步一等奖1项,市科技进步奖2项。
+                    </div>
+                </div>
             </div>
-        <div style="width: 55%;height: 80%;float: left;margin:10px;">
-            <table class="table table-striped table-hover">
-                <volist name="jsfc" id="v" offset='0' length="8">
-                    <tr><td><a class="teacher" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></td></tr>
-                </volist>
-            </table>
+            <div class="row image-right" id="images-right">
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/1hp.jpg" id="1" onclick="show(this);"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/2kwh.jpg" id="2" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/3lzm.jpg" id="3" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/4lzy.jpg" id="4" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/5ths.jpg" id="5" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/6wzh.jpg" id="6" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/7zb.jpg" id="7" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/8zxw.jpg" id="8" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/9zjy.jpg" id="9" onclick="show(this)"/>
+                <img class="img-circle" src="__PUBLIC__/img/woaiwoshi/10zcc.jpg" id="10" onclick="show(this)"/>
+            </div>
         </div>
     </div>
-</div>
-<!--bottom-->
-<div class="content2">
-    <div class="c2-title" style='background:url("__PUBLIC__/img/woaiwoshi/submission.jpg") no-repeat;'>
-        <p>学院投稿 &nbsp;&nbsp;News submission</p>
+</header>
+<!--content/mid-->
+<content>
+    <div class="cont">
+        <div class="cont1">
+            <div class="cont1_jsfc">
+                <div class="title_jsfc"><img src="__PUBLIC__/img/woaiwoshi/jsfc.jpg"></div>
+                <div id="content_jsfc_top">
+                    <!--这个地方是20位候选老师-->
+                    <!--<div id="cont_top_wc">
+                        <div id="ceng1">
+                            <span >
+                                <a href="#" onmousemove="document.getElementById('no1').style.display='block';"
+                                   onmouseout="document.getElementById('no1').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/1.jpg">
+                                    <p id="no1">第一个</p>
+                                </a>
+
+                                <a href="#" onmousemove="document.getElementById('no2').style.display='block';"
+                                   onmouseout="document.getElementById('no2').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx11.jpg">
+                                    <p id="no2">第二个</p>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" onmousemove="document.getElementById('no3').style.display='block';"
+                                   onmouseout="document.getElementById('no3').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx1.jpg">
+                                    <p id="no3">第三个</p>
+                                </a>
+                                <a href="#" onmousemove="document.getElementById('no4').style.display='block';"
+                                   onmouseout="document.getElementById('no4').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx2.jpg">
+                                    <p id="no4">第三个</p>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" onmousemove="document.getElementById('no5').style.display='block';"
+                                   onmouseout="document.getElementById('no5').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx3.jpg">
+                                    <p id="no5">第三个</p></a>
+                                <a href="#" onmousemove="document.getElementById('no6').style.display='block';"
+                                   onmouseout="document.getElementById('no6').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx4.jpg">
+                                    <p id="no6">第三个</p>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" onmousemove="document.getElementById('no7').style.display='block';"
+                                   onmouseout="document.getElementById('no7').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx5.jpg">
+                                    <p id="no7">第三个</p>
+                                </a>
+                                <a href="#" onmousemove="document.getElementById('no8').style.display='block';"
+                                   onmouseout="document.getElementById('no8').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx6.jpg">
+                                    <p id="no8">第三个</p>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" onmousemove="document.getElementById('no9').style.display='block';"
+                                   onmouseout="document.getElementById('no9').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx7.jpg">
+                                    <p id="no9">第三个</p>
+                                </a>
+                                <a href="#" onmousemove="document.getElementById('no10').style.display='block';"
+                                   onmouseout="document.getElementById('no10').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx8.jpg">
+                                    <p id="no10">第三个</p>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#" onmousemove="document.getElementById('no11').style.display='block';"
+                                   onmouseout="document.getElementById('no11').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx11.jpg">
+                                    <p id="no11">第三个</p>
+                                </a>
+                                <a href="#" onmousemove="document.getElementById('no12').style.display='block';"
+                                   onmouseout="document.getElementById('no12').style.display='none';">
+                                    <img src="__PUBLIC__/img/woaiwoshi/tx12.jpg">
+                                    <p id="no12">第三个</p>
+                                </a>
+                            </span>
+                        </div>
+                        <div id="ceng2"></div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="cont1_hdgg">
+                <div class="title_hdgg"><img src="__PUBLIC__/img/woaiwoshi/hdgg.jpg"></div>
+                <!--活动公告区域-->
+                <div class="content_hdgg">
+                    <ul>
+                        <volist name="hdgg" id="v" offset='0' length="11">
+                            <li><img src="__PUBLIC__/img/woaiwoshi/jt.png">
+                                <a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">
+                                {$v.title}</a>
+                                <span style="float: right;margin-right: 40px">{$v.time|date='y-m-d',###}</span></li>
+                        </volist>
+                    </ul>
+                    <div class="more"><a href="{:U('Index/Zhuanti/article_list',array('id'=>'19'))}">more</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="cont2">
+            <!--活动动态区域-->
+            <div class="cont2_hddt">
+                <div class="title_hddt"><img src="__PUBLIC__/img/woaiwoshi/hddt.jpg"></div>
+                <div class="cont2_hddt_top">
+                    <ul>
+                        <volist name="hddt" id="v" offset='0' length="9">
+                            <li><img src="__PUBLIC__/img/woaiwoshi/jt.png">
+                                <a class="title1" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">
+                                {$v.title}</a>
+                                <span style="float: right;margin-right: 40px">{$v.time|date='y-m-d',###}</span></li>
+                        </volist>
+                    </ul>
+                    <div class="more"><a href="{:U('Index/Zhuanti/article_list',array('id'=>'17'))}">more</a></div>
+                </div>
+            </div>
+            <div class="cont2_zwzs">
+                <div class="title_zwzs"><img src="__PUBLIC__/img/woaiwoshi/zwzs.jpg"></div>
+                <div class="cont2_zwzs_top">
+                    <ul>
+                        <volist name="zwzs" id="v" offset='0' length="9">
+                            <li><img src="__PUBLIC__/img/woaiwoshi/jt.png">
+                                <a class="title2" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">
+                                {$v.title}</a>
+                            <span style="float: right;margin-right: 40px">{$v.time|date='y-m-d',###}</span></li>
+                        </volist>
+                    </ul>
+                    <div class="more"><a href="{:U('Index/Zhuanti/article_list',array('id'=>'20'))}">more</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="cont3">
+            <div class="cont3_hdjy">
+                <div class="title_hdjy"></div>
+                <div id="cont3_hdjy_top">
+                    <!--这个地方是活动剪影-->
+                    <!--<div id="cont3_top_wc">
+                        <div id="cont3_ceng1">
+                            <span><a href="#"><img src=""></a></span>
+                        </div>
+                        <div id="cont3_ceng2"></div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
     </div>
-    <div style="width: 97%;height: 83%;margin-top: 10px;margin-left:20px;">
-        <table class="table table-striped table-hover">
-            <volist name="xytg" id="v" offset='0' length="4">
-                <tr>
-                    <td>
-                        <p><a href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></p>
-                        <h7 class="cont">{$v.content}</h7>
-                    </td>
-                </tr>
-            </volist>
-        </table>
-    </div>
-</div>
-<!--footer-->
-<footer class="footer">
-    <p>Copyright ©2015 山东理工大学学生会
-    </p>
+</content>
+<footer class="botto">
 </footer>
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!--<link rel="stylesheet" href="__PUBLIC__/js/jquery.min.js"/>-->
-<!--<link rel="stylesheet" href="__PUBLIC__/js/bootstrap.min.js"/>-->
+<!--控制标题显示字数-->
 <script>
     $(document).ready(function () {
         $(".title").each(function() {
-            var maxlength = 8;
-            if($(this).text().length>maxlength) {
-                $(this).text($(this).text().substring(0, maxlength));
+            var maxlength = 60;
+            if($(this).text().length > maxlength) {
+                $(this).text($(this).text().substring(0,maxlength));
                 $(this).html($(this).html()+"...");
             }
         });
     });
     $(document).ready(function () {
-        $(".teacher").each(function() {
-            var maxlength = 18;
-            if($(this).text().length>maxlength) {
-                $(this).text($(this).text().substring(0, maxlength));
+        $(".title1").each(function() {
+            var maxlength = 48;
+            if($(this).text().length > maxlength) {
+                $(this).text($(this).text().substring(0,maxlength));
                 $(this).html($(this).html()+"...");
             }
         });
     });
     $(document).ready(function () {
-        $(".cont").each(function() {
-            var maxlength = 160;
-            if($(this).text().length>maxlength) {
-                $(this).text($(this).text().substring(0, maxlength));
+        $(".title2").each(function() {
+            var maxlength = 85;
+            if($(this).text().length > maxlength) {
+                $(this).text($(this).text().substring(0,maxlength));
                 $(this).html($(this).html()+"...");
             }
         });
     });
 </script>
+<script type="text/javascript">
+    var image;
+    var intervalId1;
+    var intervalId2;
+    var intervalId3;
+    var drawW1 = 0;
+    var canvas;
+    var context;
+    var drawLeft;
+
+    var baiyechuangItemW ;
+    function init(){
+        image = new Image();
+        image.src="__PUBLIC__/img/woaiwoshi/waws3.png";
+        canvas = document.getElementById("canvas1");
+        context = canvas.getContext("2d");
+        drawLeft = image.width/2;
+        clearInterval(intervalId1);
+        context.clearRect(0,0,image.width,image.height);
+        intervalId1 = setInterval("leftToRight();",10);
+        setTimeout("document.getElementById('title_wei').style.display='none';",5000);
+        setTimeout("document.getElementById('container').style.display='block';",5000);
+    }
+    function leftToRight(){
+        context.drawImage(image,0,0,drawW1, image.height,0,0,drawW1,image.height);
+        drawW1 += 2;
+        if(drawW1>image.width){
+            drawW1 =0;
+            clearInterval(intervalId1);
+        }
+    }
+    var options1 = {
+        id: 'box1'
+    };
+    $('.box1').initReveal(options1);
+
+</script>
+<script type="text/javascript">
+    var old_id = 1;
+    function show(e) {
+        var id = window.event.srcElement.id;
+        document.getElementById("c"+old_id).style.display="none";
+        document.getElementById("c" +id).style.display = "block";
+        old_id = id;
+        document.getElementById('images').style.display="none";
+        document.getElementById('content_images').style.display="block";
+
+        setTimeout("document.getElementById('images-right').style.display='block';",500);
+    }
+</script>
+<script>
+    var speed=25;
+    var demo=document.getElementById("content_jsfc_top");
+    var demo1=document.getElementById("ceng1");
+    var demo2=document.getElementById("ceng2");
+    demo2.innerHTML=demo1.innerHTML;
+    function marquee() {
+        if(demo2.offsetWidth-demo.scrollLeft<=0) {
+            demo.scrollLeft-=demo1.offsetWidth;
+        } else {
+            demo.scrollLeft++;
+        }
+    }
+    var MyMar=setInterval(marquee,speed);
+    demo.onmouseover=function() {
+        clearInterval(MyMar)
+    };
+    demo.onmouseout=function() {
+        MyMar=setInterval(marquee,speed)
+    };
+</script>
+<script>
+    var speed1=25;
+    var demo1=document.getElementById("cont3_hdjy_top");
+    var demo11=document.getElementById("cont3_ceng1");
+    var demo21=document.getElementById("cont3_ceng2");
+    demo21.innerHTML=demo11.innerHTML;
+    function marquee1() {
+        if(demo21.offsetWidth-demo1.scrollLeft<=0) {
+            demo1.scrollLeft-=demo11.offsetWidth;
+        } else {
+            demo1.scrollLeft++;
+        }
+    }
+    var MyMar1=setInterval(marquee1,speed1);
+    demo1.onmouseover=function() {
+        clearInterval(MyMar1)
+    };
+    demo1.onmouseout=function() {
+        MyMar1=setInterval(marquee1,speed1)
+    };
+</script>
+<script type="text/javascript" rel="stylesheet" src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/reveal-it.js" type="text/javascript"></script>
+<script src="__PUBLIC__/js/main.js" type="text/javascript"></script>
 </body>
 </html>

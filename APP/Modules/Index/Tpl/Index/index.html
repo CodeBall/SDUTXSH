@@ -38,7 +38,7 @@
             <ul>
                 <!--通知公告-->
                 <volist name="gonggao" id="v" offset='0' length="9">
-                         <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span style="float: right;padding-right: 10px">{$v.time|date='y-m-d',###}</span></li>
+                         <li><a class="title1" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span style="float: right;padding-right: 10px">{$v.time|date='y-m-d',###}</span></li>
                 </volist>
             </ul>
         </div>
@@ -141,8 +141,17 @@
         colee_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
 
     </script>
-
+<!--控制字数-->
 <script>
+    $(document).ready(function () {
+        $(".title1").each(function() {
+            var maxlength = 10;
+            if($(this).text().length>maxlength) {
+                $(this).text($(this).text().substring(0, maxlength));
+                $(this).html($(this).html()+"...");
+            }
+        });
+    });
     $(document).ready(function () {
         $(".title").each(function() {
             var maxlength = 15;
