@@ -20,21 +20,36 @@ Class ArticleAction extends CommonAction{
         $this->page = $page->show();
         $this->display();
     }
+    //审核列表
+    public function show_audit(){
+        $this->article = D('ArticleRelation')->where(array('del'=>1))->relation(true)->select();
+        $this->display();
+    }
     //删除到回收站
     public function toTrach(){
         $update = array(
             'id'=>(int) $_GET['id'],
-            'del'=>1
+            'del'=>3
         );
         if(M('article')->save($update)){
-            $this->success('已经删除到回收站',U('Admin/Article/index'));
+            $this->success('已经删除到回收站',U('Admin/Article/trach'));
         }
         else
             $this->error('删除失败');
     }
     //回收站
     public function trach(){
-        $this->article = D('ArticleRelation')->where(array('del'=>1))->relation(true)->select();
+        //实现分页操作
+        import('ORG.Util.Page');
+        $count = M('article')->where(array('del'=>3))->count();
+        $page = new Page($count,20);
+        $limit = $page->firstRow.','.$page->listRows;
+        //在读取主表的时候，如果只想读取表中的某几项，而只有很少的项是不读取的，那么可以先将不读取的项目列出来，然后去掉即可
+        //在调用relation方法的时候，如果填写true，那么关联表中有多个表，就都会关联起来，如果只想关联其中的一个表，那么只需要写这个表的名称就可以了
+
+
+        $this->article = D('ArticleRelation')->where(array('del'=>3))->relation(true)->select();
+        $this->page = $page->show();
         $this->display();
     }
     //彻底删除文章
@@ -53,10 +68,10 @@ Class ArticleAction extends CommonAction{
             'del'=>0
         );
         if(M('article')->save($update)){
-            $this->success('已经还原到文章列表',U('Admin/Article/index'));
+            $this->success('文章已经成功发表',U('Admin/Article/index'));
         }
         else
-            $this->error('还原失败');
+            $this->error('发表失败');
     }
     //添加文章
     public function addArticle(){
@@ -78,7 +93,7 @@ Class ArticleAction extends CommonAction{
             'time'=>time(),
             'auther'=> $_POST['auther'],
             'cid'=>(int) $_POST['cid'],
-            'del' => 1//该属性为1代表文章已经被删除，属行为0代表文章已经发表
+            'del' => 1//该属性为1代表文章等待审核，属行为0代表文章已经发表
         );
         if($bid = M('Article')->add($data)){
             if(isset($_POST['aid'])){

@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-<h1>回收站列表</h1>
+<h1>待审核文章列表</h1>
 <table class="table">
     <tr>
         <th>ID</th>
@@ -29,14 +29,11 @@
             <td width="10%">{$v.cate_name}</td>
             <td width="13%">{$v.time|date='y-m-d H:i',###}</td>
             <td width="17%">
-                【<a href="{:U('Admin/Article/deleteArticle',array('id'=>$v['id']))}">彻底删除</a>】
-                【<a href="{:U('Admin/Article/restore',array('id'=>$v['id']))}">还原</a>】
+                【<a href="{:U('Admin/Article/toTrach',array('id'=>$v['id']))}">删除到回收站</a>】
+                【<a href="{:U('Admin/Article/restore',array('id'=>$v['id']))}">发表</a>】
             </td>
         </tr>
     </foreach>
-    <tr>
-        <td colspan="6">{$page}</td>
-    </tr>
 </table>
 </body>
 </html>
