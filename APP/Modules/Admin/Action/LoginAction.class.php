@@ -17,6 +17,9 @@ Class LoginAction extends Action{
         if(!$user['user_status']){
             $this->error('非法用户',U('Index/Index/index'));
         }
+        else{
+            session('user_organization',$user['user_nikename']);
+        }
         //更新最后一次登陆ip
         $user = array(
             'user_id'=>$user['user_id'],
@@ -29,7 +32,6 @@ Class LoginAction extends Action{
         session(C('USER_AUTH_KEY'),$user['user_id']);
         session('username',$user['user_name']);
         session('userpwd',I('user_password','','md5'));
-
         //超级管理员识别
         if($user['user_name'] == C('RBAC_SUPERADMIN')){
             session(C('ADMIN_AUTH_KEY'),true);

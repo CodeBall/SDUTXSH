@@ -80,13 +80,15 @@ PRIMARY KEY (`id`)
 /*文章存储表*/
 CREATE TABLE `article`(
 `id` int unsigned not null auto_increment,
-`title` varchar(30) not null default '',/*文章名称*/
+`title` varchar(60) not null default '',/*文章名称*/
 `content` text,/*文章内容*/
 `time` int(10) unsigned not null default 0,/*发表时间*/
 `auther` varchar(30) not null default '',/*文章作者*/
 `cid` int unsigned not null,/*该文章属于哪一类*/
 `del` tinyint(1) unsigned not null default 0,/*放入回收站*/
 `likeit` int(10) not null default 0,
+`organization` varchar(30) not null default ``,
+`del_reason` varchar(100) not null default ``,
 PRIMARY KEY (`id`),
 KEY `cid`(`cid`)
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;

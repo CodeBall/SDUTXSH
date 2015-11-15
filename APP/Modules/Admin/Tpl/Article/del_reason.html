@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="post" action="{:U('Admin/Article/toTrach')}">
+    <table>
+        <tr>
+            <td>请输入文章删除原因:</td>
+            <td><input type="text" value="100字以内" name="del_reason"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="hidden" name="id" value={$id}>
+                <input type="submit" value="提交"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

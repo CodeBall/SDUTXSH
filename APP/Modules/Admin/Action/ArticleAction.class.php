@@ -25,10 +25,17 @@ Class ArticleAction extends CommonAction{
         $this->article = D('ArticleRelation')->where(array('del'=>1))->relation(true)->select();
         $this->display();
     }
+
+    //调用输入删除原因页面
+    public function del_reason(){
+        $this->id = $_GET['id'];
+        $this->display();
+    }
     //删除到回收站
     public function toTrach(){
         $update = array(
-            'id'=>(int) $_GET['id'],
+            'id'=>(int) $_POST['id'],
+            'del_reason'=>$_POST['del_reason'],
             'del'=>3
         );
         if(M('article')->save($update)){
@@ -86,13 +93,13 @@ Class ArticleAction extends CommonAction{
     }
     //添加文章表单处理
     public function  addArticleHandle(){
-
         $data = array(
             'title'=>$_POST['title'],
             'content'=>$_POST['content'],
             'time'=>time(),
             'auther'=> $_POST['auther'],
             'cid'=>(int) $_POST['cid'],
+            'organization'=>$_SESSION['user_organization'],//添加投稿者一项
             'del' => 1//该属性为1代表文章等待审核，属行为0代表文章已经发表
         );
         if($bid = M('Article')->add($data)){
