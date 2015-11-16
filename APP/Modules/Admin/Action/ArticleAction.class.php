@@ -22,7 +22,7 @@ Class ArticleAction extends CommonAction{
     }
     //审核列表
     public function show_audit(){
-        $this->article = D('ArticleRelation')->where(array('del'=>1))->relation(true)->select();
+        $this->article = D('ArticleRelation')->where(array('del'=>1))->relation(true)->order('time desc')->select();
         $this->display();
     }
 
@@ -39,6 +39,7 @@ Class ArticleAction extends CommonAction{
             'del'=>3
         );
         if(M('article')->save($update)){
+            print_r(M('article')->getLastSql());die;
             $this->success('已经删除到回收站',U('Admin/Article/trach'));
         }
         else
@@ -55,7 +56,7 @@ Class ArticleAction extends CommonAction{
         //在调用relation方法的时候，如果填写true，那么关联表中有多个表，就都会关联起来，如果只想关联其中的一个表，那么只需要写这个表的名称就可以了
 
 
-        $this->article = D('ArticleRelation')->where(array('del'=>3))->relation(true)->select();
+        $this->article = D('ArticleRelation')->where(array('del'=>3))->relation(true)->limit($limit)->order('time desc')->select();
         $this->page = $page->show();
         $this->display();
     }
@@ -100,7 +101,7 @@ Class ArticleAction extends CommonAction{
             'auther'=> $_POST['auther'],
             'cid'=>(int) $_POST['cid'],
             'organization'=>$_SESSION['user_organization'],//添加投稿者一项
-            'del' => 1//该属性为1代表文章等待审核，属行为0代表文章已经发表
+            'del' => 1//该属性为1代表文章等待审核，属行为0代表文章已经发表,3代表放进回收站
         );
         if($bid = M('Article')->add($data)){
             if(isset($_POST['aid'])){
@@ -132,7 +133,6 @@ Class ArticleAction extends CommonAction{
         $data = array(
             'title'=>$_POST['title'],
             'content'=>$_POST['content'],
-            'time'=>time(),
             'auther'=> $_POST['auther'],
             'cid'=>(int) $_POST['cid']
         );
