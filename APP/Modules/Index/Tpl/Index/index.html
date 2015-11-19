@@ -38,7 +38,7 @@
             <ul>
                 <!--通知公告-->
                 <volist name="gonggao" id="v" offset='0' length="9">
-                         <li><a class="title1" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span style="float: right;padding-right: 10px">{$v.time|date='y-m-d',###}</span></li>
+                         <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span style="float: right;padding-right: 10px">{$v.time|date='y-m-d',###}</span></li>
                 </volist>
             </ul>
         </div>
@@ -74,10 +74,10 @@
                 <div class="public-title">
                     <a href="{:U('Index/List/index',array('id' => 14))}"><h3>院会风采 / <small>Style</small></h3></a>
                 </div>
-                <div style="width: 300px;height: 260px;clear: both;padding-top: 5px">
+                <div class="college_ed">
                     <ul>
                         <volist name="college_style" id="v" offset='0' length="7">
-                            <li style="padding: 5px;list-style: none;margin-left: -30px"><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}<span class="pull-right">{$v.time|date='y-m-d',###}</span></a></li>
+                            <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></li>
                         </volist>
                     </ul>
                     </tbody>
@@ -91,7 +91,7 @@
                 </div>
                 <ul><!--li<=7-->
                     <volist name="culture" id="v" offset='0' length="7">
-                        <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><span class="pull-right">{$v.time|date='y-m-d',###}</span></li>
+                        <li><a class="title" href="{:U('Index/List/article_show',array('id'=>$v['id']))}">{$v.title}</a><!--<span class="pull-right">{$v.time|date='y-m-d',###}</span>--></li>
                     </volist>
                 </ul>
             </div>

@@ -242,6 +242,7 @@ nav {
 
 .content-top-left ul li {
     margin-top: 15px;
+    margin-left: -25px;
 }
 
 .content-top-left ul li a{
@@ -256,7 +257,7 @@ nav {
 }
 
 .content-top-right-title {
-    width: 620px;
+    width: 820px;
     height: 40px;
     /*margin-top: 10px;*/
     /*border-bottom: 1px solid #717171;*/
@@ -269,7 +270,8 @@ nav {
     color: #ffffff;
     float: left;
     text-align: center;
-    margin-right: 130px;
+    margin-right: 145px;
+    margin-top: 10px;
 }
 
 .public-title a {
@@ -360,6 +362,17 @@ nav {
     color: #000000;
     font-size: 19px;
     margin-top: 20px;
+}
+.college_ed{
+    width: 300px;
+    height: 260px;
+    clear: both;
+    padding-top: 5px;
+}
+.college_ed ul li{
+    padding-top: 5px;
+    list-style: none;
+    margin-left: -40px;
 }
 
 .content-cen a {

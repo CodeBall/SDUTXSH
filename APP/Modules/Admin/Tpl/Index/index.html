@@ -55,7 +55,7 @@
         <div class="col-sm-3 col-md-2 sidebar" style="float: left;">
             <ul class="nav nav-sidebar">
                 <li class="active">文章管理 <span class="sr-only">(current)</span></li>
-                <li><a href="{:U('Admin/Article/addArticle')}">添加文章</a></li>
+                <li onclick="demo()"><a href="{:U('Admin/Article/addArticle')}">添加文章</a></li>
                 <li><a href="{:U('Admin/Article/index')}">文章列表</a></li>
                 <li><a href="{:U('Admin/Article/show_audit')}">文章审核</a></li>
                 <li><a href="{:U('Admin/Article/trach')}">回收站</a></li>
@@ -89,7 +89,18 @@
         </div>
     </div>
 </div>
-
+<script>
+    function demo(){
+        alert("投稿须知\n" +
+                "1、 作品要求原创，如有抄袭嫌疑不予发表\n" +
+                "2、 新闻投稿请附带图片，没有图片不予发表\n" +
+                "3、 图片标准为500*375px或500*333px，图片失真不予发表\n" +
+                "4、 字体要求：16号，宋体\n" +
+                "5、 标题前用英文半角中括号写清学院的简称\n" +
+                "6、 字数至少500，字数过低不予发表\n" +
+                "7、 学院新闻时效性为24小时，失去时效性不予发表");
+    }
+</script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
