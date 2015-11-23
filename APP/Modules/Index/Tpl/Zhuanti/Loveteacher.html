@@ -175,10 +175,10 @@
                     <div id="cont_top_wc">
                         <div id="ceng1">
                             <span >
-                                <a href="#" onmousemove="document.getElementById('no1').style.display='block';"
+                                <a href="{:U('Index/List/article_show',array('id'=>254))}" onmousemove="document.getElementById('no1').style.display='block';"
                                    onmouseout="document.getElementById('no1').style.display='none';">
-                                    <img src="__PUBLIC__/img/woaiwoshi/1.jpg">
-                                    <p id="no1">还没有该老师的资料哦</p>
+                                    <img src="__PUBLIC__/img/woaiwoshi/1JiXie.jpg">
+                                    <p id="no1">宫金良</p>
                                 </a>
 
                                 <a href="{:U('Index/List/article_show',array('id'=>200))}" onmousemove="document.getElementById('no2').style.display='block';"
@@ -240,10 +240,10 @@
                                     <img src="__PUBLIC__/img/woaiwoshi/11Li_Xue.jpg">
                                     <p id="no11">王政</p>
                                 </a>
-                                <a href="#" onmousemove="document.getElementById('no12').style.display='block';"
+                                <a href="{:U('Index/List/article_show',array('id'=>255))}" onmousemove="document.getElementById('no12').style.display='block';"
                                    onmouseout="document.getElementById('no12').style.display='none';">
                                     <img src="__PUBLIC__/img/woaiwoshi/12Shang_Xue.jpg">
-                                    <p id="no12">还没有该老师的资料哦</p>
+                                    <p id="no12">周锐</p>
                                 </a>
                             </span>
                             <span>
@@ -262,12 +262,12 @@
                                 <a href="{:U('Index/List/article_show',array('id'=>194))}" onmousemove="document.getElementById('no15').style.display='block';"
                                    onmouseout="document.getElementById('no15').style.display='none';">
                                     <img src="__PUBLIC__/img/woaiwoshi/15Fa_Xue.jpg">
-                                    <p id="no15">牛喜霞<br/>还没有该老师的照片</p>
+                                    <p id="no15">牛喜霞</p>
                                 </a>
                                 <a href="{:U('Index/List/article_show',array('id'=>203))}" onmousemove="document.getElementById('no16').style.display='block';"
                                    onmouseout="document.getElementById('no16').style.display='none';">
                                     <img src="__PUBLIC__/img/woaiwoshi/16Ma_Ke_Si.jpg">
-                                    <p id="no16">温立武<br/>还没有该老师的照片</p>
+                                    <p id="no16">温立武</p>
                                 </a>
                             </span>
                             <span>
@@ -298,8 +298,13 @@
                                 <a href="{:U('Index/List/article_show',array('id'=>202))}" onmousemove="document.getElementById('no21').style.display='block';"
                                    onmouseout="document.getElementById('no21').style.display='none';">
                                     <img src="__PUBLIC__/img/woaiwoshi/21Lu_Tai.jpg">
-                                    <p id="no21">姜兆辉<br/>还没有该老师的照片</p>
+                                    <p id="no21">姜兆辉</p>
                                 </a>
+                                 <a href="#" onmousemove="document.getElementById('no22').style.display='block';"
+                                    onmouseout="document.getElementById('no22').style.display='none';">
+                                     <img src="__PUBLIC__/img/woaiwoshi/22T.jpg">
+                                     <p id="no22"></p>
+                                 </a>
                             </span>
                         </div>
                         <div id="ceng2"></div>
@@ -358,12 +363,21 @@
                 <div class="title_hdjy"></div>
                 <div id="cont3_hdjy_top">
                     <!--这个地方是活动剪影-->
-                    <!--<div id="cont3_top_wc">
+                    <div id="cont3_top_wc">
                         <div id="cont3_ceng1">
-                            <span><a href="#"><img src=""></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no1.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no2.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no3.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no4.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no5.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no6.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no7.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no8.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no9.jpg"></a></span>
+                            <span><a href="#"><img src="__PUBLIC__/img/woaiwoshi/no10.jpg"></a></span>
                         </div>
                         <div id="cont3_ceng2"></div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -375,7 +389,7 @@
 <script>
     $(document).ready(function () {
         $(".title").each(function() {
-            var maxlength = 60;
+            var maxlength = 23;
             if($(this).text().length > maxlength) {
                 $(this).text($(this).text().substring(0,maxlength));
                 $(this).html($(this).html()+"...");
@@ -384,7 +398,7 @@
     });
     $(document).ready(function () {
         $(".title1").each(function() {
-            var maxlength = 48;
+            var maxlength = 16;
             if($(this).text().length > maxlength) {
                 $(this).text($(this).text().substring(0,maxlength));
                 $(this).html($(this).html()+"...");

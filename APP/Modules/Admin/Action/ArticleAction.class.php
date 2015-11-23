@@ -76,7 +76,7 @@ Class ArticleAction extends CommonAction{
             'del'=>0
         );
         if(M('article')->save($update)){
-            $this->success('文章已经成功发表',U('Admin/Article/index'));
+            $this->success('文章已经成功发表',U('Admin/Article/show_audit'));
         }
         else
             $this->error('发表失败');
