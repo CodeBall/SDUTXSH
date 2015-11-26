@@ -39,8 +39,7 @@ Class ArticleAction extends CommonAction{
             'del'=>3
         );
         if(M('article')->save($update)){
-            print_r(M('article')->getLastSql());die;
-            $this->success('已经删除到回收站',U('Admin/Article/trach'));
+            $this->success('已经删除到回收站',U('Admin/Article/show_audit'));
         }
         else
             $this->error('删除失败');
@@ -59,6 +58,11 @@ Class ArticleAction extends CommonAction{
         $this->article = D('ArticleRelation')->where(array('del'=>3))->relation(true)->limit($limit)->order('time desc')->select();
         $this->page = $page->show();
         $this->display();
+    }
+    //查看未通过文章
+    public function No_pass(){
+        $this->article = D('ArticleRelation')->where(array('del'=>3))->where(array('organization'=>$_SESSION['user_organization']))->relation(true)->order('time desc')->select();
+        $this->display('trach');
     }
     //彻底删除文章
     public function deleteArticle(){
@@ -134,7 +138,8 @@ Class ArticleAction extends CommonAction{
             'title'=>$_POST['title'],
             'content'=>$_POST['content'],
             'auther'=> $_POST['auther'],
-            'cid'=>(int) $_POST['cid']
+            'cid'=>(int) $_POST['cid'],
+            'del'=>1
         );
         if(M('Article')->where(array('id'=>$_POST['article_id']))->save($data)){
             if(isset($_POST['aid'])){
@@ -146,7 +151,7 @@ Class ArticleAction extends CommonAction{
                 $sql = rtrim($sql,',');
                 M('article_attr')->query($sql);
             }
-            $this->success('修改文章成功',U('Admin/Article/index'));
+            $this->success('修改文章成功',U('Admin/Article/No_pass'));
         }
         else
             $this->error('修改文章失败');
@@ -175,7 +180,7 @@ Class ArticleAction extends CommonAction{
         $this->page = $page->show();
         $this->display();
     }
-    //修改个人状态信息
+    //修改报名状态信息
     public function change_sta(){
         $id = (int)$_GET['id'];
         $status = array(

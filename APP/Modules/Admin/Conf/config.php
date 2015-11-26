@@ -23,7 +23,7 @@ return array(
     'NOT_AUTH_ACTION'=>'addUserHandle,ChangeUserHandle,addRoleHandle,addNodeHandle,
     changeNodeHandle,setAccess,addArticleHandle,changeArticleHandle,addAttrHandle,
     changeAttrHandle,addCateHandle,changeCateHandle,setAccess,ChangePasHandle,ChangeUserHandle,
-    deleteArticle,restore,file_upload',
+    deleteArticle,file_upload,del_reason',
 
     'RBAC_ROLE_TABLE'=>'role',                      //角色表名称
 
